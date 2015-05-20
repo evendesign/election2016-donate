@@ -9,14 +9,21 @@ $grid-padding   : $gutter-width
 $phone          : $total-columns
 $pad            : 8
 $desktop        : 12
+$wide-desktop   : 15
 
 // page-container
 $page-container: ".page"
+
+$container-style: fluid
 
 // debug layout
 // @import layout-debug
 
 // ---- container setting ----
-#{$page-container}
-  +container($phone, $pad ,$desktop)
+#{$page-container}, %container
+  max-width: 1920px
+  +container
+  padding: 0
 
+  // +at-breakpoint($pad)
+  //   padding: 48px

@@ -1,0 +1,155 @@
+.hero
+  +pie-clearfix
+  position: relative
+  min-height: 800px
+  height: 100vh
+
+  .header
+    +box-sizing(border-box)
+    position: absolute
+    top: 60px
+    left: 60px
+    z-index: 10
+
+  .visual
+    background: url("/images/hero.jpg") center no-repeat
+    @include background-size(cover)
+
+
+  .logo
+    width: 140px
+    height: 64px
+    +hide-text()
+    background-image: url(/images/logo.svg)
+
+  .main-title
+    width: 270px
+    height: 85px
+    +leader(2)
+    +hide-text()
+    background-image: url(/images/title-mobile.svg)
+
+  .donate
+    position: absolute
+    z-index: 10
+    right: 60px
+    bottom: 60px
+    width: 35%
+
+
+    .title
+      +leader(.25)
+      +trailer(.25)
+      padding-left: 24px
+      +adjust-font-size-to(21px)
+
+    .donate-item-list
+      +pie-clearfix
+
+      .item
+        +box-sizing(border-box)
+        display: block
+        float: left
+        width: calc(50% - 4px)
+        margin: 2px
+        padding: 24px
+        color: $color-black
+        background-color: $color-white-a50
+
+        &:hover
+          text-decoration: none
+          background-color: $color-black-a10
+
+          .donate-button
+            +translateX(12px)
+
+      .description
+        +adjust-font-size-to(13px)
+        font-weight: bold
+
+      .donate-amount
+        +inline-block()
+        +adjust-font-size-to(32px, 1.5)
+
+    .donate-button
+      display: inline-block
+      font-weight: bold
+      color: $color-black
+      +transition(transform .25s)
+
+    .custom-donate-amount
+
+      span
+        +adjust-font-size-to(32px)
+
+      input[type="number"]
+        +reset-box-model
+        +box-sizing(border-box)
+        width: calc(66.666% - 4px)
+        margin: 2px
+        padding-left: 24px
+        +adjust-font-size-to(32px)
+        background-color: $color-white-a50
+        +border-radius(0px)
+        -webkit-appearance: none
+
+        &:focus
+          outline: none
+
+        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+          -webkit-appearance: none
+          margin: 0
+
+        &::-webkit-input-placeholder
+          +adjust-font-size-to(18px, 2)
+          color: $color-black
+
+        &::-moz-placeholder
+          +adjust-font-size-to(18px, 2)
+          color: $color-black
+
+        &:-ms-input-placeholder
+          +adjust-font-size-to(18px, 2)
+          color: $color-black
+
+
+      input[type="submit"]
+        +reset-box-model
+        vertical-align: top
+        width: calc(33.333% - 4px)
+        margin: 2px
+        padding: 15px 24px
+        background-color: $color-black-a10
+        +transition(background-color .25s)
+
+
+        &:focus
+          outline: none
+
+        &:hover
+          background-color: $color-black-a25
+
+
+
+  +at-breakpoint($pad)
+    .main-title
+      width: 300px
+      height: 93px
+      background-image: url(/images/title.svg)
+
+    .donate
+      .donate-item-list
+        .item
+          width: calc(33.333% - 4px)
+
+  +at-breakpoint($desktop)
+    .visual
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      width: 100%
+
+
+
+

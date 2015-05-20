@@ -1,0 +1,33 @@
+.slogan
+  +pie-clearfix
+  position: relative
+
+  .content
+    +box-sizing(border-box)
+    padding: 24px
+    color: white
+    background-color: $color-black-a65
+
+    p:last-child
+      +trailer(0)
+
+  .visual
+    img
+      display: block
+      width: 100%
+
+  +at-breakpoint($pad)
+    .content
+      padding: 60px
+
+  +at-breakpoint($desktop)
+    .content
+      position: absolute
+      top: 0
+      left: 50%
+      bottom: 0
+      width: 50%
+
+    .visual
+      float: left
+      width: 50%
