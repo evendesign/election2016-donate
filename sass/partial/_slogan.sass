@@ -1,33 +1,81 @@
 .slogan
-  +pie-clearfix
-  position: relative
+  +background(linear-gradient(to top, $color-gray-light, white))
+
+  .container
+    +pie-clearfix
+    position: relative
 
   .content
     +box-sizing(border-box)
-    padding: 24px
-    color: white
-    background-color: $color-black-a65
+    max-width: 600px
+    margin: 0 auto
+    padding: 72px 24px 24px
+    color: $color-black
+
+    h2
+      +trailer(2)
+      +adjust-font-size-to(28px)
+      text-align: center
+
+    h3
+      +leader(2)
+      +trailer(0)
+      +adjust-font-size-to(24px, 1.5)
+      text-align: center
+
+      span
+        display: inline-block
+
+    p
+      +adjust-font-size-to(16px, 1.2)
 
     p:last-child
       +trailer(0)
 
   .visual
+    max-width: 400px
+    margin: 0 auto
+    padding: 0 24px
+
     img
       display: block
       width: 100%
 
   +at-breakpoint($pad)
     .content
-      padding: 60px
-
-  +at-breakpoint($desktop)
-    .content
-      position: absolute
-      top: 0
-      left: 50%
-      bottom: 0
-      width: 50%
+      padding: 120px 24px 24px
 
     .visual
-      float: left
+      padding: 0 48px
+
+  +at-breakpoint(64em)
+    +background(radial-gradient(circle at top left, white, $color-gray-light))
+
+    .content
+      position: absolute
+      top: 50%
+      left: 0
+      max-width: none
       width: 50%
+      padding: 0 0 0 128px
+      +translateY(-50%)
+
+    .visual
+      float: right
+      max-width: none
+      width: 50%
+      padding: 192px 0 0 0
+
+  +at-breakpoint(82em)
+    .content
+      p
+        +adjust-font-size-to(18px, 1.5)
+
+      h2
+        +adjust-font-size-to(32px)
+
+      h3
+        +adjust-font-size-to(28px)
+
+    .visual
+      padding: 128px 0 0 0

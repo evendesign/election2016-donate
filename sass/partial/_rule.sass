@@ -5,28 +5,20 @@
 
   .content
     +box-sizing(border-box)
+    max-width: 54em
+    margin: 0 auto
     padding: 24px
-    color: white
-    background-color: $color-black-a65
+    color: $color-black
 
     p:last-child
       +trailer(0)
+      +adjust-font-size-to(16px, 1.2)
 
-  .visual
-    background-color: $color-black-a10
+    li
+      +adjust-font-size-to(16px, 1.2)
 
   +at-breakpoint($pad)
     .content
       padding: 60px
 
   +at-breakpoint($desktop)
-    .content
-      float: left
-      width: 50%
-
-    .visual
-      position: absolute
-      top: 0
-      left: 50%
-      bottom: 0
-      width: 50%

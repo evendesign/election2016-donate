@@ -1,19 +1,37 @@
 .hero
   +pie-clearfix
   position: relative
-  min-height: 800px
-  height: 100vh
 
   .header
     +box-sizing(border-box)
-    position: absolute
-    top: 60px
-    left: 60px
+    position: relative
+    padding: 24px
     z-index: 10
+    height: 320px
 
   .visual
-    background: url("/images/hero.jpg") center no-repeat
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    width: 100%
+    height: 320px
+    background-image: url("/images/hero-mobile.png")
+    background-position: left top
+    background-repeat: no-repeat
     @include background-size(cover)
+
+    #canvas
+      display: none
+
+    // &:after
+    //   content: ""
+    //   position: absolute
+    //   top: 0
+    //   left: 0
+    //   right: 0
+    //   bottom: 0
+    //   background-color: rgba(0,0,0,.025)
 
 
   .logo
@@ -30,18 +48,14 @@
     background-image: url(/images/title-mobile.svg)
 
   .donate
-    position: absolute
-    z-index: 10
-    right: 60px
-    bottom: 60px
-    width: 35%
-
+    margin: 2px
 
     .title
-      +leader(.25)
-      +trailer(.25)
-      padding-left: 24px
-      +adjust-font-size-to(21px)
+      +hide-text()
+      width: 194px
+      height: 31px
+      margin: 12px
+      background: url(/images/donate-title.svg) no-repeat
 
     .donate-item-list
       +pie-clearfix
@@ -52,30 +66,50 @@
         float: left
         width: calc(50% - 4px)
         margin: 2px
-        padding: 24px
+        padding: 24px 12px
+        text-align: center
         color: $color-black
-        background-color: $color-white-a50
+        +transition(background-color .25s, color .25s)
+
 
         &:hover
           text-decoration: none
-          background-color: $color-black-a10
 
-          .donate-button
-            +translateX(12px)
+        &:nth-child(1)
+          background-color: rgba($color-green-d10, .8)
+
+        &:nth-child(2)
+          background-color: rgba($color-green-d20, .8)
+
+        &:nth-child(3)
+          background-color: rgba($color-green-d30, .8)
+
+        &:nth-child(4)
+          background-color: rgba($color-green-d40, .8)
+
+        &:nth-child(5)
+          background-color: rgba($color-green-d50, .8)
+
+        &:nth-child(6)
+          background-color: rgba($color-green-d60, .8)
+
+        &:nth-child(7)
+          background-color: rgba($color-green-d70, .8)
+
+        &:nth-child(8)
+          background-color: rgba($color-green-d80, .8)
 
       .description
         +adjust-font-size-to(13px)
         font-weight: bold
 
+        span
+          display: block
+          color: $color-black-a35
+
       .donate-amount
         +inline-block()
         +adjust-font-size-to(32px, 1.5)
-
-    .donate-button
-      display: inline-block
-      font-weight: bold
-      color: $color-black
-      +transition(transform .25s)
 
     .custom-donate-amount
 
@@ -85,41 +119,52 @@
       input[type="number"]
         +reset-box-model
         +box-sizing(border-box)
-        width: calc(66.666% - 4px)
+        width: calc(75% - 4px)
+        height: 48px
         margin: 2px
-        padding-left: 24px
-        +adjust-font-size-to(32px)
-        background-color: $color-white-a50
+        padding: 10px
+        +adjust-font-size-to(18px)
+        background-color: $color-black-a10
+        border: 2px solid transparent
         +border-radius(0px)
+        +transition(background-color .25s)
+
         -webkit-appearance: none
 
         &:focus
           outline: none
+          border: 2px solid $color-black-a10
+          background-color: $color-white-a75
 
         &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
           -webkit-appearance: none
           margin: 0
 
         &::-webkit-input-placeholder
-          +adjust-font-size-to(18px, 2)
-          color: $color-black
+          color: $color-black-a50
+
+        &:-moz-placeholder
+          color: $color-black-a50
 
         &::-moz-placeholder
-          +adjust-font-size-to(18px, 2)
-          color: $color-black
+          color: $color-black-a50
 
         &:-ms-input-placeholder
-          +adjust-font-size-to(18px, 2)
-          color: $color-black
+          color: $color-black-a50
 
 
       input[type="submit"]
         +reset-box-model
         vertical-align: top
-        width: calc(33.333% - 4px)
+        width: calc(25% - 4px)
+        height: 48px
         margin: 2px
-        padding: 15px 24px
-        background-color: $color-black-a10
+        padding: 12px
+        font-weight: bold
+        color: white
+        background-color: $color-green-d80
+        -webkit-appearance: none
+        +border-radius(0px)
         +transition(background-color .25s)
 
 
@@ -127,29 +172,112 @@
           outline: none
 
         &:hover
-          background-color: $color-black-a25
-
+          background-color: darken($color-green-d60, 10%)
 
 
   +at-breakpoint($pad)
+    .container
+      position: relative
+      min-height: 960px
+      height: 100vh
+
+    .visual
+      height: 100%
+      background-image: none
+      background: radial-gradient(#fff 0%, #f0f1b4 55%, #b1d37c 95%)
+      // background-image: url("/images/hero.jpg")
+      // background-position: center
+
+      #canvas
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        -webkit-tap-highlight-color: transparent
+
+    .header
+      position: absolute
+      top: 60px
+      left: 60px
+      z-index: 10
+      height: auto
+      padding: 0
+
     .main-title
       width: 300px
       height: 93px
       background-image: url(/images/title.svg)
 
     .donate
+      position: absolute
+      z-index: 10
+      right: 60px
+      bottom: 60px
+      width: 45%
+
+      .title
+        margin: 12px 0 12px auto
+
       .donate-item-list
         .item
-          width: calc(33.333% - 4px)
+          padding: 24px 12px
 
   +at-breakpoint($desktop)
-    .visual
+    .container
+      min-height: 720px
+
+    .donate
       position: absolute
-      top: 0
-      left: 0
-      bottom: 0
-      width: 100%
+      z-index: 10
+      right: 60px
+      bottom: 60px
+      width: 55%
 
+      .donate-item-list
+        .item
+          width: calc(25% - 4px)
 
+          &:nth-child(1)
+            background-color: $color-white-a75
+            &:hover
+              background-color: rgba($color-green-d10, .9)
 
+          &:nth-child(2)
+            background-color: $color-white-a75
+            &:hover
+              background-color: rgba($color-green-d20, .9)
+
+          &:nth-child(3)
+            background-color: $color-white-a75
+            &:hover
+              background-color: rgba($color-green-d30, .9)
+
+          &:nth-child(4)
+            background-color: $color-white-a75
+            &:hover
+              background-color: rgba($color-green-d40, .9)
+
+          &:nth-child(5)
+            background-color: $color-white-a75
+            &:hover
+              background-color: rgba($color-green-d50, .9)
+
+          &:nth-child(6)
+            background-color: $color-white-a75
+            &:hover
+              background-color: rgba($color-green-d60, .9)
+
+          &:nth-child(7)
+            background-color: $color-white-a75
+            &:hover
+              background-color: rgba($color-green-d70, .9)
+
+          &:nth-child(8)
+            background-color: $color-white-a75
+            &:hover
+              background-color: rgba($color-green-d80, .9)
 
