@@ -1,5 +1,5 @@
 .slogan
-  +background(linear-gradient(to top, $color-gray-light, white))
+  +background(linear-gradient(to top, rgba(218,218,218,1), rgba(243,243,243,1)))
 
   .container
     +pie-clearfix
@@ -15,13 +15,11 @@
     h2
       +trailer(2)
       +adjust-font-size-to(28px)
-      text-align: center
 
     h3
       +leader(2)
-      +trailer(0)
+      +trailer(2)
       +adjust-font-size-to(24px, 1.5)
-      text-align: center
 
       span
         display: inline-block
@@ -31,6 +29,11 @@
 
     p:last-child
       +trailer(0)
+
+    .sign
+      display: block
+      margin: 0 0 0 auto
+      +replace-text-with-svg("vi-en-signature-onlight")
 
   .visual
     max-width: 400px
@@ -45,26 +48,28 @@
     .content
       padding: 120px 24px 24px
 
+      h3 span
+        display: block
+
     .visual
       padding: 0 48px
 
   +at-breakpoint(64em)
-    +background(radial-gradient(circle at top left, white, $color-gray-light))
+    +background(radial-gradient(circle at top left, rgba(243,243,243,1), rgba(218,218,218,1)))
 
     .content
-      position: absolute
-      top: 50%
-      left: 0
+      float: left
       max-width: none
       width: 50%
-      padding: 0 0 0 128px
-      +translateY(-50%)
+      padding: 96px 0 96px 128px
 
     .visual
-      float: right
+      position: absolute
+      bottom: 0
+      left: 50%
       max-width: none
       width: 50%
-      padding: 192px 0 0 0
+      padding: 0
 
   +at-breakpoint(82em)
     .content
@@ -76,6 +81,3 @@
 
       h3
         +adjust-font-size-to(28px)
-
-    .visual
-      padding: 128px 0 0 0

@@ -1,61 +1,81 @@
 .hero
-  +pie-clearfix
   position: relative
 
+  .container
+    position: relative
+
   .header
-    +box-sizing(border-box)
     position: relative
     padding: 24px
     z-index: 10
-    height: 320px
+    margin-bottom: 178px
 
   .visual
+    overflow: hidden
     position: absolute
     top: 0
     left: 0
     bottom: 0
     width: 100%
-    height: 320px
-    background-image: url("/images/hero-mobile.png")
-    background-position: left top
-    background-repeat: no-repeat
-    @include background-size(cover)
+    height: 100%
+    background: radial-gradient(#fff 0%, #F3F6F3 55%)
 
     #canvas
-      display: none
-
-    // &:after
-    //   content: ""
-    //   position: absolute
-    //   top: 0
-    //   left: 0
-    //   right: 0
-    //   bottom: 0
-    //   background-color: rgba(0,0,0,.025)
-
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 45%
+      -webkit-tap-highlight-color: transparent
 
   .logo
-    width: 140px
-    height: 64px
+    +trailer(0)
     +hide-text()
-    background-image: url(/images/logo.svg)
-
-  .main-title
-    width: 270px
-    height: 85px
-    +leader(2)
-    +hide-text()
-    background-image: url(/images/title-mobile.svg)
+    +replace-text-with-scalable-svg("LIGHT-UP-TAIWAN-only")
 
   .donate
+    position: relative
+    z-index: 10
     margin: 2px
 
+    .share-button
+      +trailer(.1)
+      margin-right: 16px
+      text-align: right
+
+      span
+        display: inline-block
+        margin-right: 6px
+        vertical-align: text-top
+        +adjust-font-size-to(13px)
+
+      .fb-share
+        +inline-block()
+        +replace-text-with-svg("icon-share-facebook")
+        +filter(brightness(0%))
+        opacity: .35
+
+        &:hover
+          +filter(brightness(100%))
+          opacity: 1
+
+
+      .tweet
+        +inline-block()
+        +replace-text-with-svg("icon-share-twitter")
+        +filter(brightness(0%))
+        opacity: .35
+
+        &:hover
+          +filter(brightness(100%))
+          opacity: 1
+
+
     .title
-      +hide-text()
-      width: 194px
-      height: 31px
-      margin: 12px
-      background: url(/images/donate-title.svg) no-repeat
+      margin: 0 18px 18px auto
+      +replace-text-with-svg("office-donate")
 
     .donate-item-list
       +pie-clearfix
@@ -66,9 +86,9 @@
         float: left
         width: calc(50% - 4px)
         margin: 2px
-        padding: 24px 12px
+        padding: 12px
+        color: white
         text-align: center
-        color: $color-black
         +transition(background-color .25s, color .25s)
 
 
@@ -76,28 +96,28 @@
           text-decoration: none
 
         &:nth-child(1)
-          background-color: rgba($color-green-d10, .8)
+          background-color: rgba($color-green-d10, .9)
 
         &:nth-child(2)
-          background-color: rgba($color-green-d20, .8)
+          background-color: rgba($color-green-d20, .9)
 
         &:nth-child(3)
-          background-color: rgba($color-green-d30, .8)
+          background-color: rgba($color-green-d30, .9)
 
         &:nth-child(4)
-          background-color: rgba($color-green-d40, .8)
+          background-color: rgba($color-green-d40, .9)
 
         &:nth-child(5)
-          background-color: rgba($color-green-d50, .8)
+          background-color: rgba($color-green-d50, .9)
 
         &:nth-child(6)
-          background-color: rgba($color-green-d60, .8)
+          background-color: rgba($color-green-d60, .9)
 
         &:nth-child(7)
-          background-color: rgba($color-green-d70, .8)
+          background-color: rgba($color-green-d70, .9)
 
         &:nth-child(8)
-          background-color: rgba($color-green-d80, .8)
+          background-color: rgba($color-green-d80, .9)
 
       .description
         +adjust-font-size-to(13px)
@@ -113,9 +133,6 @@
 
     .custom-donate-amount
 
-      span
-        +adjust-font-size-to(32px)
-
       input[type="number"]
         +reset-box-model
         +box-sizing(border-box)
@@ -128,7 +145,6 @@
         border: 2px solid transparent
         +border-radius(0px)
         +transition(background-color .25s)
-
         -webkit-appearance: none
 
         &:focus
@@ -167,37 +183,28 @@
         +border-radius(0px)
         +transition(background-color .25s)
 
-
         &:focus
           outline: none
 
         &:hover
-          background-color: darken($color-green-d60, 10%)
+          background-color: darken($color-green-d80, 10%)
 
+  @media (min-width: 35em) and (orientation : landscape)
+    .header
+      margin-bottom: 96px
 
   +at-breakpoint($pad)
     .container
-      position: relative
       min-height: 960px
-      height: 100vh
 
-    .visual
+    .logo
+      +hide-text()
+      +replace-text-with-scalable-svg("vlogo")
+      min-width: initial
+      width: 100%
+
+    .visual #canvas
       height: 100%
-      background-image: none
-      background: radial-gradient(#fff 0%, #f0f1b4 55%, #b1d37c 95%)
-      // background-image: url("/images/hero.jpg")
-      // background-position: center
-
-      #canvas
-        display: block
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        width: 100%
-        height: 100%
-        -webkit-tap-highlight-color: transparent
 
     .header
       position: absolute
@@ -207,77 +214,97 @@
       height: auto
       padding: 0
 
-    .main-title
-      width: 300px
-      height: 93px
-      background-image: url(/images/title.svg)
-
     .donate
       position: absolute
-      z-index: 10
       right: 60px
       bottom: 60px
       width: 45%
 
-      .title
-        margin: 12px 0 12px auto
+      .share-button
+        margin-right: -2px
 
-      .donate-item-list
-        .item
-          padding: 24px 12px
+      .title
+        margin: 0 0 18px auto
 
   +at-breakpoint($desktop)
     .container
       min-height: 720px
+      height: 100vh
 
     .donate
-      position: absolute
-      z-index: 10
-      right: 60px
-      bottom: 60px
       width: 55%
 
       .donate-item-list
         .item
+          overflow: hidden
           width: calc(25% - 4px)
+          padding: 12px
 
           &:nth-child(1)
+            color: darken($color-green-d10, 2.5%)
             background-color: $color-white-a75
             &:hover
-              background-color: rgba($color-green-d10, .9)
+              background-color: rgba($color-green-d10, 1)
 
           &:nth-child(2)
+            color: $color-green-d20
             background-color: $color-white-a75
             &:hover
-              background-color: rgba($color-green-d20, .9)
+              background-color: rgba($color-green-d20, 1)
 
           &:nth-child(3)
+            color: $color-green-d30
             background-color: $color-white-a75
             &:hover
-              background-color: rgba($color-green-d30, .9)
+              background-color: rgba($color-green-d30, 1)
 
           &:nth-child(4)
+            color: $color-green-d40
             background-color: $color-white-a75
             &:hover
-              background-color: rgba($color-green-d40, .9)
+              background-color: rgba($color-green-d40, 1)
 
           &:nth-child(5)
+            color: $color-green-d50
             background-color: $color-white-a75
             &:hover
-              background-color: rgba($color-green-d50, .9)
+              background-color: rgba($color-green-d50, 1)
 
           &:nth-child(6)
+            color: $color-green-d60
             background-color: $color-white-a75
             &:hover
-              background-color: rgba($color-green-d60, .9)
+              background-color: rgba($color-green-d60, 1)
 
           &:nth-child(7)
+            color: $color-green-d70
             background-color: $color-white-a75
             &:hover
-              background-color: rgba($color-green-d70, .9)
+              background-color: rgba($color-green-d70, 1)
 
           &:nth-child(8)
+            color: $color-green-d80
             background-color: $color-white-a75
             &:hover
-              background-color: rgba($color-green-d80, .9)
+              background-color: rgba($color-green-d80, 1)
+
+          .donate-amount
+            position: relative
+            top: 25px
+            +transition(top .25s, color .25s)
+
+
+          .description
+            position: relative
+            top: 68px
+            +transition(top .25s, color .25s)
+
+          &:hover
+            .donate-amount
+              top: 0
+              color: white
+
+            .description
+              top: 0
+              color: white
 

@@ -26,3 +26,12 @@ line_comments = false
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 preferred_syntax = :scss
+
+the_hold_options = {
+  :login => "evenwu", # 你的帳號
+  :token => "229f2b40d4f17f98f142318250a75f20", # 你的密碼
+  :project => "donate", # 專案名稱
+  # :project_site_password => "donatedesign", # 密碼，這一行拿掉的話就沒有密碼
+  :host => "http://the-hold.handlino.com/",
+  :cname => "juan-kuan.iing.tw"
+}

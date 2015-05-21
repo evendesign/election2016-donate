@@ -1,2 +1,1 @@
-var $canvas = document.getElementById("canvas")
-new Canvas({canvas: $canvas})
+(function(){var e,n;e=document.getElementById("canvas"),n=document.querySelectorAll(".hero")[0],new Canvas({canvas:e,container:n})}).call(this);

@@ -5,20 +5,35 @@
 
   .content
     +box-sizing(border-box)
-    max-width: 54em
     margin: 0 auto
-    padding: 24px
-    color: $color-black
+    padding: 48px 24px
+    color: $color-black-a50
+
 
     p:last-child
       +trailer(0)
-      +adjust-font-size-to(16px, 1.2)
+      +adjust-font-size-to(13px, 1.2)
 
     li
-      +adjust-font-size-to(16px, 1.2)
+      +adjust-font-size-to(13px, 1.2)
+
+    ol
+      margin-bottom: 28px
 
   +at-breakpoint($pad)
     .content
-      padding: 60px
+      padding: 72px 64px
+
+      .rules
+        -webkit-columns: 10em 2
+        -webkit-column-gap: 3em
+
+  @media (min-width: 57em) and (orientation : landscape)
+    .content
+      padding: 72px 128px
 
   +at-breakpoint($desktop)
+    .content
+      padding: 72px 128px
+
+
