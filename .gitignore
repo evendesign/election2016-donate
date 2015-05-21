@@ -1,0 +1,9 @@
+lightup-cut-ribbon/Gemfile
+lightup-cut-ribbon/Gemfile.lock
+lightup-cut-ribbon/*.json
+lightup-cut-ribbon/bower_components/
+lightup-cut-ribbon/node_modules/
+lightup-cut-ribbon/src/
+lightup-cut-ribbon/gulpfile.coffee
+lightup-cut-ribbon/npm-debug.log
+lightup-cut-ribbon/public/vendor
