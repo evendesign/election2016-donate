@@ -1,1 +1,13 @@
-(function(){var e,n;e=$("#canvas")[0],n=$(".hero")[0],new Canvas({canvas:e,container:n})}).call(this);
+(function() {
+  var $canvas, $container;
+
+  $canvas = document.getElementById('canvas');
+
+  $container = document.querySelectorAll('.hero')[0];
+
+  new Canvas({
+    canvas: $canvas,
+    container: $container
+  });
+
+}).call(this);
