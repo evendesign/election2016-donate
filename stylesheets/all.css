@@ -124,6 +124,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 td, th { padding: 0; }
 
+@font-face { font-family: "icomoon"; src: url("/webfont/icomoon.eot?-dczghy"); src: url("/webfont/icomoon.eot?#iefix-dczghy") format("embedded-opentype"), url("/webfont/icomoon.woff?-dczghy") format("woff"), url("/webfont/icomoon.ttf?-dczghy") format("truetype"), url("/webfont/icomoon.svg?-dczghy#icomoon") format("svg"); font-weight: normal; font-style: normal; }
+
 * html { font-size: 100%; }
 
 html { font-size: 16px; line-height: 24px; }
@@ -192,10 +194,12 @@ hr, .divider { margin-top: 24px; margin-bottom: 24px; border-top: 1px solid #ccc
 .hero .donate { position: relative; z-index: 10; margin: 2px; }
 .hero .donate .share-button { margin-bottom: 2px; margin-right: 16px; text-align: right; }
 .hero .donate .share-button span { display: inline-block; margin-right: 6px; vertical-align: text-top; font-size: 13px; line-height: 24px; }
-.hero .donate .share-button .fb-share { display: -moz-inline-stack; display: inline-block; vertical-align: middle; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/icon-share-facebook.png?1432220552'); background-repeat: no-repeat; background-position: 50% 50%; width: 32px; height: 32px; background-image: none, url('/images/icon-share-facebook.svg?1432220552'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; -webkit-filter: brightness(0%); -moz-filter: brightness(0%); filter: brightness(0%); opacity: 0.35; }
-.hero .donate .share-button .fb-share:hover { -webkit-filter: brightness(100%); -moz-filter: brightness(100%); filter: brightness(100%); opacity: 1; }
-.hero .donate .share-button .tweet { display: -moz-inline-stack; display: inline-block; vertical-align: middle; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/icon-share-twitter.png?1432220552'); background-repeat: no-repeat; background-position: 50% 50%; width: 32px; height: 32px; background-image: none, url('/images/icon-share-twitter.svg?1432220552'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; -webkit-filter: brightness(0%); -moz-filter: brightness(0%); filter: brightness(0%); opacity: 0.35; }
-.hero .donate .share-button .tweet:hover { -webkit-filter: brightness(100%); -moz-filter: brightness(100%); filter: brightness(100%); opacity: 1; }
+.hero .donate .share-button .fb-share, .hero .donate .share-button .tweet { display: -moz-inline-stack; display: inline-block; vertical-align: middle; padding: 4px; font-family: "icomoon"; speak: none; font-size: 24px; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; text-decoration: none; line-height: 1; color: rgba(0, 0, 0, 0.35); -webkit-transition: color 0.25s; -moz-transition: color 0.25s; -o-transition: color 0.25s; transition: color 0.25s; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.hero .donate .share-button .fb-share span, .hero .donate .share-button .tweet span { display: none; }
+.hero .donate .share-button .fb-share:before { content: "\ea8e"; }
+.hero .donate .share-button .fb-share:hover { color: #45619d; }
+.hero .donate .share-button .tweet:before { content: "\ea93"; }
+.hero .donate .share-button .tweet:hover { color: #55acee; }
 .hero .donate .title { margin: 0 18px 18px auto; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/office-donate.png?1432226668'); background-repeat: no-repeat; background-position: 50% 50%; width: 256px; height: 72px; background-image: none, url('/images/office-donate.svg?1432226668'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 .hero .donate .donate-item-list:after { content: ""; display: table; clear: both; }
 .hero .donate .donate-item-list .item { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: block; float: left; width: calc(50% - 4px); margin: 2px; padding: 12px; color: white; text-align: center; -webkit-transition: background-color 0.25s, color 0.25s; -moz-transition: background-color 0.25s, color 0.25s; -o-transition: background-color 0.25s, color 0.25s; transition: background-color 0.25s, color 0.25s; cursor: pointer; }
