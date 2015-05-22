@@ -212,13 +212,13 @@ hr, .divider { margin-top: 24px; margin-bottom: 24px; border-top: 1px solid #ccc
 .hero .donate .donate-item-list .item:nth-child(8) { background-color: rgba(42, 144, 75, 0.9); }
 .hero .donate .donate-item-list .description { font-size: 15px; line-height: 24px; font-weight: bold; color: rgba(255, 255, 255, 0.75); }
 .hero .donate .donate-item-list .donate-amount { display: -moz-inline-stack; display: inline-block; vertical-align: middle; font-size: 32px; line-height: 36px; }
-.hero .donate .custom-donate-amount input[type="number"] { margin: 0; padding: 0; border: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: calc(75% - 4px); height: 48px; margin: 2px; padding: 10px; font-size: 18px; line-height: 24px; background-color: rgba(0, 0, 0, 0.1); border: 2px solid transparent; -webkit-border-radius: 0px; -moz-border-radius: 0px; -ms-border-radius: 0px; -o-border-radius: 0px; border-radius: 0px; -webkit-transition: background-color 0.25s; -moz-transition: background-color 0.25s; -o-transition: background-color 0.25s; transition: background-color 0.25s; -webkit-appearance: none; }
-.hero .donate .custom-donate-amount input[type="number"]:focus { outline: none; border: 2px solid rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.75); }
-.hero .donate .custom-donate-amount input[type="number"]::-webkit-outer-spin-button, .hero .donate .custom-donate-amount input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-.hero .donate .custom-donate-amount input[type="number"]::-webkit-input-placeholder { color: rgba(0, 0, 0, 0.5); }
-.hero .donate .custom-donate-amount input[type="number"]:-moz-placeholder { color: rgba(0, 0, 0, 0.5); }
-.hero .donate .custom-donate-amount input[type="number"]::-moz-placeholder { color: rgba(0, 0, 0, 0.5); }
-.hero .donate .custom-donate-amount input[type="number"]:-ms-input-placeholder { color: rgba(0, 0, 0, 0.5); }
+.hero .donate .custom-donate-amount input[type="tel"] { margin: 0; padding: 0; border: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: calc(75% - 4px); height: 48px; margin: 2px; padding: 10px; font-size: 18px; line-height: 24px; background-color: rgba(0, 0, 0, 0.1); border: 2px solid transparent; -webkit-border-radius: 0px; -moz-border-radius: 0px; -ms-border-radius: 0px; -o-border-radius: 0px; border-radius: 0px; -webkit-transition: background-color 0.25s; -moz-transition: background-color 0.25s; -o-transition: background-color 0.25s; transition: background-color 0.25s; -webkit-appearance: none; }
+.hero .donate .custom-donate-amount input[type="tel"]:focus { outline: none; border: 2px solid rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.75); }
+.hero .donate .custom-donate-amount input[type="tel"]::-webkit-outer-spin-button, .hero .donate .custom-donate-amount input[type="tel"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.hero .donate .custom-donate-amount input[type="tel"]::-webkit-input-placeholder { color: rgba(0, 0, 0, 0.5); }
+.hero .donate .custom-donate-amount input[type="tel"]:-moz-placeholder { color: rgba(0, 0, 0, 0.5); }
+.hero .donate .custom-donate-amount input[type="tel"]::-moz-placeholder { color: rgba(0, 0, 0, 0.5); }
+.hero .donate .custom-donate-amount input[type="tel"]:-ms-input-placeholder { color: rgba(0, 0, 0, 0.5); }
 .hero .donate .custom-donate-amount input[type="submit"] { margin: 0; padding: 0; border: 0; vertical-align: top; width: calc(25% - 4px); height: 48px; margin: 2px; padding: 12px; font-weight: bold; color: white; background-color: #2a904b; -webkit-appearance: none; -webkit-border-radius: 0px; -moz-border-radius: 0px; -ms-border-radius: 0px; -o-border-radius: 0px; border-radius: 0px; -webkit-transition: background-color 0.25s; -moz-transition: background-color 0.25s; -o-transition: background-color 0.25s; transition: background-color 0.25s; }
 .hero .donate .custom-donate-amount input[type="submit"]:focus { outline: none; }
 .hero .donate .custom-donate-amount input[type="submit"]:hover { background-color: #1e6936; }
