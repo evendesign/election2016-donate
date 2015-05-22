@@ -90,7 +90,7 @@
         color: white
         text-align: center
         +transition(background-color .25s, color .25s)
-
+        cursor: pointer
 
         &:hover
           text-decoration: none
@@ -120,12 +120,9 @@
           background-color: rgba($color-green-d80, .9)
 
       .description
-        +adjust-font-size-to(13px)
+        +adjust-font-size-to(15px)
         font-weight: bold
-
-        span
-          display: block
-          color: $color-black-a35
+        color: $color-white-a75
 
       .donate-amount
         +inline-block()
@@ -290,7 +287,7 @@
 
           .donate-amount
             position: relative
-            top: 25px
+            top: 15px
             +transition(top .25s, color .25s)
 
 
