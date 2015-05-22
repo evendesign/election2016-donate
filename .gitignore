@@ -1,0 +1,9 @@
+lightup-*/Gemfile
+lightup-*/Gemfile.lock
+lightup-*/*.json
+lightup-*/bower_components/
+lightup-*/node_modules/
+lightup-*/src/
+lightup-*/gulpfile.coffee
+lightup-*/npm-debug.log
+lightup-*/public/vendor
