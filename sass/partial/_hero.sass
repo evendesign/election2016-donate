@@ -120,7 +120,13 @@
 
       .donate-amount
         +inline-block()
-        +adjust-font-size-to(32px, 1.5)
+        font-size: 32px
+        line-height: 1
+        font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+        font-weight: 300
+        position: relative
+        top: 3px
+
 
     .custom-donate-amount
 
@@ -227,7 +233,7 @@
         .item
           overflow: hidden
           width: calc(25% - 4px)
-          padding: 12px
+          padding: 12px 0
 
           &:nth-child(1)
             color: darken($color-green-d10, 2.5%)
@@ -280,20 +286,20 @@
           .donate-amount
             position: relative
             top: 15px
-            +transition(top .25s, color .25s)
+            +transition(top .2s, color .2s)
 
 
           .description
             position: relative
             top: 68px
-            +transition(top .25s, color .25s)
+            +transition(top .2s, color .2s)
 
           &:hover
             .donate-amount
-              top: 0
+              top: 5px
               color: white
 
             .description
-              top: 0
+              top: 1px
               color: white
 
