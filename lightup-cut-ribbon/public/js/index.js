@@ -1,10 +1,1 @@
-(function() {
-  var $canvas;
-
-  $canvas = document.getElementById('canvas');
-
-  new Canvas({
-    canvas: $canvas
-  });
-
-}).call(this);
+(function(){var a;a=document.getElementById("canvas"),new Canvas({canvas:a})}).call(this);
