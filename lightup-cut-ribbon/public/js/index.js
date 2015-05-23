@@ -1,1 +1,0 @@
-(function(){var a;a=document.getElementById("canvas"),new Canvas({canvas:a})}).call(this);
