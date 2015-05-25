@@ -1,0 +1,71 @@
+.postal-remi
+  +leader(1.5)
+  +trailer(1.5)
+
+  .content
+    +box-sizing(border-box)
+    position: relative
+    max-width: 600px
+    margin: 0 auto
+    padding: 0 24px
+    font-weight: bold
+
+  .title
+    +trailer(.25)
+    +adjust-font-size-to(21px)
+
+  .postal-info
+    +trailer(.25)
+    +adjust-font-size-to(18px)
+
+  @include at-breakpoint($pad)
+    +leader(2)
+    +trailer(2)
+
+    .title
+      +trailer(.25)
+      +adjust-font-size-to(24px)
+
+    .postal-info
+      +adjust-font-size-to(21px, 1.25)
+
+  @include at-breakpoint(64em)
+    .content
+      max-width: none
+      padding-left: 0
+
+    .title
+      display: inline-block
+      +trailer(0)
+      padding-left: 128px
+      padding-right: 24px
+      +adjust-font-size-to(30px, 2.5)
+      background-color: white
+
+      &:after
+        content: ""
+        position: absolute
+        z-index: -1
+        top: 50%
+        width: 50%
+        height: 4px
+        margin-top: -2px
+        background-color: $color-black-a10
+
+    .postal-info
+      position: absolute
+      top: 0
+      right: 60px
+      width: 55%
+      +trailer(0)
+      margin-left: -24px
+      padding-left: 24px
+      +adjust-font-size-to(21px, 1.25)
+      background-color: white
+
+  +at-breakpoint(82em)
+    .title
+      +adjust-font-size-to(36px, 3)
+
+    .postal-info
+      +adjust-font-size-to(24px, 1.5)
