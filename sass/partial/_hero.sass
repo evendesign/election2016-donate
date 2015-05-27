@@ -33,8 +33,8 @@
 
   .logo
     +trailer(0)
-    +hide-text()
     +replace-text-with-svg("LIGHT-UP-TAIWAN-only")
+    font-size: 0 // for opera android version
 
   .donate
     position: relative
@@ -196,7 +196,6 @@
       min-height: 960px
 
     .logo
-      +hide-text()
       +replace-text-with-svg("vlogo")
 
     .visual #canvas
