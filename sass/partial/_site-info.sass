@@ -1,0 +1,19 @@
+.site-info
+  display: none
+
+  +at-breakpoint($desktop)
+    padding: rhythm(1) 0
+    text-align: center
+
+    .site-name
+      +adjust-font-size-to(15px, 2/3)
+      color: white
+      font-weight: bold
+
+    .site-url
+      +adjust-font-size-to(13px)
+      color: rgba(white,.3)
+
+  a
+    +unstyled-link
+    cursor: pointer
