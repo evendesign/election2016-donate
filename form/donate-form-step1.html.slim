@@ -1,0 +1,13 @@
+- pay_with_creditcard = "true"
+- $sign_type = "name"
+- $action_state = "pay_ready"
+
+.donate-form-detail
+  .container
+    .page-header
+      h1.logo 2016 蔡英文競選 小額捐款
+    - if pay_with_creditcard == "true"
+      = render "/partial/form-creditcard-data"
+    = render "/partial/form-personal-data"
+    = render "/partial/form-donate-note"
+    = render "/partial/form-action-button"

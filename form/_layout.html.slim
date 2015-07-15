@@ -6,11 +6,12 @@ html lang="zh-TW"
     = render "/layout_og"
   body
     .page
-      .page-inner
+      .page-inner.donate-form
+        .donate-form-background
         = yield
         .page-bottom-illustrator
       = render "/partial/site-info"
     = render "/partial/footer"
-    = render "/layout_foot"
+    = render "/form/layout_foot"
     = render "/layout_livereload"
     = render "/layout_ga.erb"

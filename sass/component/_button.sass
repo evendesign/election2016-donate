@@ -2,78 +2,104 @@
 // slim markup:
 // button.btn / a.btn
 //
-// modifiers:
-// .btn_action / .btn_danger
+// Modifiers:
+// .btn_action / .btn_primary / .btn_danger / .btn_outline
 //
 // state:
 // .is_disabled
 //
 // ===========
 
-$btn-padding: 4px 24px
-$btn-border-radius: $global-radius-width
-$btn-font-size: 15px
-
-$btn-color: white
-$btn-bg-color: #c1c1c1
-$btn-hover-bg-color: lighten($btn-bg-color, 5%)
-
-$btn-disabled-color: darken($btn-color, 5%)
-$btn-disabled-bg-color: lighten($btn-bg-color, 5%)
-
-$btn-action-bg-color: #444
-$btn-action-hover-bg-color: lighten($btn-action-bg-color, 15%)
-
-$btn-danger-bg-color: #a00
-$btn-danger-hover-bg-color: #b11
-
-
-// 重置 button 樣式
-%btn
-  margin-bottom: 0 // For input.btn
-  padding: $btn-padding
-  border: none
-  @include border-radius($btn-border-radius)
-  @include adjust-font-size-to($btn-font-size)
-  background-image: none // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+.btn
+  @extend %subpixel
+  display: inline-block
+  margin: 0 6px 6px 0
+  padding: 4px 22px
+  border: 2px solid $color-gray-white
+  +border-radius($global-radius-width)
+  +adjust-font-size-to(15px)
+  background-image: none
   text-align: center
   text-shadow: none
   cursor: pointer
-  @extend %subpixel
   outline: none
-  @include nowrap
-  @include user-select(none)
+  +nowrap
+  +user-select(none)
+  color: $color-black
+  background-color: $color-gray-white
+  +transition(border .25s, background-color .25s, color .25s)
 
   &:hover
     text-decoration: none
+    color: $color-black
+    border-color: $color-gray-light
+    background-color: $color-gray-light
 
-.btn
-  @extend %btn
-  color: $btn-color
-  background-color: $btn-bg-color
-
-  &:hover
-    background-color: $btn-hover-bg-color
-
-  &:disabled ,&.is-disabled
-    color: $btn-disabled-color
-    background-color: $btn-disabled-bg-color
+  &:disabled , &.is-disabled
     cursor: default
+    color: $color-gray
+    border-color: $color-gray-white
+    background-color: $color-gray-white
 
 
-.btn_action
-  @extend %btn
-  color: $btn-color
-  background-color: $btn-action-bg-color
-
+// Modifiers
+.btn_primary
+  color: white
+  border-color: $color-primary
+  background-color: $color-primary
   &:hover
-    background-color: $btn-action-hover-bg-color
+    color: white
+    border-color: darken($color-primary, 5%)
+    background-color: darken($color-primary, 5%)
+
+  &:disabled , &.is-disabled
+    cursor: default
+    color: $color-gray
+    border-color: $color-gray-white
+    background-color: $color-gray-white
 
 
 .btn_danger
-  @extend %btn
-  color: $btn-color
-  background-color: $btn-danger-bg-color
-
+  color: white
+  border-color: $color-red
+  background-color: $color-red
   &:hover
-    background-color: $btn-danger-hover-bg-color
+    color: white
+    border-color: $color-red-dark
+    background-color: $color-red-dark
+
+  &:disabled , &.is-disabled
+    cursor: default
+    color: $color-gray
+    border-color: $color-gray-white
+    background-color: $color-gray-white
+
+
+.btn_outline
+  border-color: $color-black
+  background-color: transparent
+  &:hover
+    border-color: $color-black
+    background-color: $color-black
+    color: white
+
+  &:disabled, &.is-disabled
+    color: $color-gray
+    border-color: $color-gray-white
+    background-color: transparent
+
+
+.btn_outline-primary
+  border-color: $color-primary
+  color: $color-primary
+  background-color: transparent
+  &:hover
+    border-color: $color-primary
+    background-color: $color-primary
+    color: white
+
+  &:disabled , &.is-disabled
+    color: $color-gray
+    border-color: $color-gray-white
+    background-color: transparent
+

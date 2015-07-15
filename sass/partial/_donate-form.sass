@@ -1,0 +1,216 @@
+.donate-form
+  position: relative
+  +background(linear-gradient(to bottom, #F2F7F2 0%, #FFFFFF 100%))
+
+  &.desktop .donate-method .select-creditcard
+    width: calc(100% - 12px)
+
+  &.desktop .donate-method .select-webatm
+    display: block
+
+  .container
+    position: relative
+    max-width: 1136px
+    +container
+    +trailer(2)
+    padding: 0 12px
+
+  .form-part-title
+    +leader(1)
+    +trailer(0)
+    +adjust-font-size-to(21px)
+    font-weight: bold
+
+    &.underline
+      +trailer(1)
+      border-bottom: 1px solid #50B584
+
+  .donate-money
+    .money-amount
+      position: relative
+      +adjust-font-size-to(32px, 2.5)
+      color: #2A904B
+
+    .input-unit
+      position: absolute
+      margin-top: 1px
+      margin-left: 1px
+      width: 59px
+      height: 59px
+      text-align: center
+      background-color: #F7F9E4
+
+
+    input
+      +reset-box-model
+      +box-sizing(border-box)
+      width: 100%
+      padding: 0 24px 0 72px
+      +adjust-font-size-to(32px, 2.5)
+      background-color: rgba(white, .75)
+      border: 1px solid transparent
+      +transition(border .25s)
+
+
+      &:focus
+        outline: none
+        border: 1px solid $color-gray-light
+
+    .form-note
+      +leader(.5)
+      +adjust-font-size-to(15px)
+
+  .donate-select-icon
+    display: block
+    margin: 12px auto
+    opacity: .7
+
+  .donate-select-name
+    +adjust-font-size-to(16px)
+    font-weight: bold
+
+  .select-item
+    +box-sizing(border-box)
+    float: left
+    +padding-leader(1)
+    +padding-trailer(1)
+    color: #2A904B
+    background-color: rgba(white, .75)
+    border: 1px solid transparent
+    +transition(background-color .25s, border .25s)
+
+  .donate-sign-type
+    .sign-select
+      +pie-clearfix
+      text-align: center
+
+    .select-item
+      width: calc(50% - 6px)
+
+      &:hover
+        border: 1px solid $color-gray-light
+
+      .donate-select-name
+        +adjust-font-size-to(16px)
+
+    .select-name
+      &.active
+        color: $color-black
+        background-color: #ACCC18
+
+    .select-nameless
+      margin-left: 12px
+      &.active
+        color: $color-black
+        background-color: #98C424
+
+  .donate-method
+    .method-select
+      +pie-clearfix
+      margin-left: -12px
+      text-align: center
+
+    .select-item
+      width: calc(50% - 12px)
+      margin-bottom: 12px
+      margin-left: 12px
+
+      &:hover
+        border: 1px solid $color-gray-light
+
+    .select-creditcard
+      &.active
+        color: $color-black
+        background-color: #7AB835
+
+    .select-webatm
+      display: none
+      &.active
+        color: $color-black
+        background-color: #61AD41
+
+    .select-atm
+      &.active
+        color: $color-black
+        background-color: #53A644
+
+    .select-market
+      &.active
+        color: $color-black
+        background-color: #3B9948
+
+    .select-barcode
+      &.active
+        color: $color-black
+        background-color: #2A904B
+
+  .donate-action
+    +leader()
+    text-align: right
+
+    .next-button
+      +reset-box-model
+      display: inline-block
+      padding: 18px
+      width: 100%
+      font-weight: bold
+      color: #2A904B
+      background-color: white
+      border: 1px solid transparent
+      +transition(border .25s)
+
+      &:hover
+        border: 1px solid $color-gray-light
+
+  .donate-form-detail
+    max-width: 900px
+    margin: 0 auto
+
+  +at-breakpoint($pad)
+    &.desktop .donate-method .select-creditcard
+      width: calc(20% - 12px)
+
+    .container
+      padding: 0 24px
+
+    .form-part-title
+      +adjust-font-size-to(24px)
+
+    .donate-select-name
+      +adjust-font-size-to(18px)
+
+    .donate-sign-type
+      .select-item
+        +padding-leader(1.5)
+        +padding-trailer(1.5)
+        .donate-select-name
+          +adjust-font-size-to(21px)
+
+    .donate-method
+      .select-item
+        width: calc(20% - 12px)
+        margin-bottom: 0
+
+    .donate-action
+      +leader(2)
+
+      .next-button
+        +adjust-font-size-to(18px)
+
+  +at-breakpoint($desktop)
+    .container
+      padding: 0 48px
+
+    .donate-select-name
+      +adjust-font-size-to(21px)
+
+    .donate-sign-type
+      .select-item
+        +padding-leader(2)
+        +padding-trailer(2)
+        .donate-select-name
+          +adjust-font-size-to(28px)
+
+    .donate-action
+      .next-button
+        +adjust-font-size-to(21px, 1)

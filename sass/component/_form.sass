@@ -1,131 +1,136 @@
-// input variable
-$form-height: 32px
-$form-border-width: 1px
-$form-border-color: #ddd
-$form-padding: 5px 6px
-$form-radius-width: $global-radius-width
-$form-bg-color: white
-$form-color: #777
-$form-placeholder-color: #999
-$form-font-size: 16px
+form
+  +trailer(2)
 
-$form-label-font-size: $form-font-size
-$form-label-color: black
+.form-row
+  +adjust-font-size-to(15px)
 
-$form-content-font-size: $form-font-size
-$form-content-color: $form-color
-
-$form-tip-font-size: 13px
-$form-tip-color: #999
-
-
-// form 預設樣式
-.form
-  // Remove default style in iOS.
-  textarea,
-  input:not([type]),
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="url"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="number"],
-  input[type="datetime"] { -webkit-appearance: none }
-
-  textarea,
-  select,
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="email"],
-  input[type="month"],
-  input[type="number"],
-  input[type="password"],
-  input[type="search"],
-  input[type="tel"],
-  input[type="text"],
-  input[type="time"],
-  input[type="url"],
-  input[type="week"]
-    @include box-sizing(border-box)
-    border: $form-border-width solid $form-border-color
-    padding: $form-padding
-    height: $form-height
-    @include border-radius($form-radius-width)
-    color: $form-color
-    background-color: $form-bg-color
-    @include input-placeholder-color($form-placeholder-color)
-    @include box-shadow(none)
-    outline: none
-    max-width: 100% // Responsiveness: Sets a maximum width relative to the parent to scale on narrower viewports
-
-    &.full-width
-      width: 100%
-
-  input[type="file"], select
-    cursor: pointer
-    outline: none
-
-  textarea
-    height: auto // 高度由 rows 屬性決定
-    vertical-align: top // Improve readability and alignment in all browsers.
-
-
-
-// =========================================
-// form 排版
-// =========================================
-
-// 垂直排列（預設排版方式）
 .form-row + .form-row
-  @include leader(0.5)
+  +leader(.75)
+
+.form-content
+  &.text-center
+    text-align: center
+
+  &.is-important
+    color: #CB5246
+    font-weight: bold
 
 .form-label
   display: block
-  @include adjust-font-size-to($form-label-font-size)
-  @include trailer(0.125)
+  +trailer(0.125)
   color: black
   @extend %subpixel
 
-.form-label_required
-  &:after
+  .is_required &:before
     content: '*'
     display: inline
-    font-size: $form-label-font-size + 2px
+    margin-right: 3px
+    font-size: 16px
     line-height: 1
     color: #c00
 
-.form-content
-  display: block
-  @include adjust-font-size-to($form-content-font-size)
-  color: $form-content-color
-
-.form-tip
-  display: block
-  margin: 0
-  @include adjust-font-size-to($form-tip-font-size)
-  color: $form-tip-color
-
-.radio-group, .checkbox-group
-  display: block
-
-  & + &
-    @include leader(0.125)
-
-
-.radio, .checkbox
-  cursor: pointer
-  display: inline-block
+.span-label
   margin-right: 12px
+  line-height: 36px
 
-  input
+.form-control
+  +reset-box-model
+  +box-sizing(border-box)
+  vertical-align: top
+  width: 100%
+  min-height: 36px
+  margin: 0 6px 6px 0
+  padding: 4px 9px
+  border: 2px solid #ddd
+  border-radius: 5px
+  +appearance(none)
+  +transition(border-color .25s)
+
+  &:focus
     outline: none
+    border-color: #50B584
+
+  &.tiny
+    max-width: 70px
+
+  &.small
+    max-width: 160px
+
+.form-select
+  position: relative
+  +box-sizing(border-box)
+  vertical-align: top
+  height: 36px
+  margin: 0 6px 6px 0
+  padding: 0 30px 0 9px
+  line-height: 32px
+  border: 2px solid #ddd
+  border-radius: 5px
+  background-color: white
+  background-image: url("/images/down.png")
+  background-image: none, url("/images/down.svg")
+  background-repeat: no-repeat
+  background-position:  right 11px
+  +transition(border-color .25s)
+  +appearance(none)
+  +filter(saturate(0%))
+
+  &:focus
+    outline: none
+    border-color: #50B584
+    +filter(saturate(100%))
+
+.group-radio, .group-checkbox
+  label
+    margin-right: 12px
+
+  input[type="radio"], input[type="checkbox"]
     margin-right: 3px
 
+.form-tip, .form-warning, .form-error
+  +box-sizing(border-box)
+  position: relative
+  +leader(.5)
+  padding: 6px 9px 6px 36px
+  font-weight: bold
+  +border-radius(5px)
 
+  &:before
+    content: ""
+    position: absolute
+    top: 7px
+    left: 7px
+  p
+    margin: 0
+    +adjust-font-size-to(15px)
 
-// 水平排列：
-// 由於在手機版時，表單不適合使用水平排列，
-// 也無法確認在某個版本時，表單的排版就變成水平排列，
-// 所以表單水平排列，就由 partial 的部分在來控制。
+.form-tip
+  color: #2C513E
+  background-color: rgba(#A7CD6B, .15)
+
+  &:before
+    +replace-text-with-svg("icon-tip")
+
+.form-warning
+  color: darken(#E1AF31, 5%)
+  background-color: rgba(#FAC339, .15)
+
+  &:before
+    +replace-text-with-svg("icon-warning")
+
+.form-error
+  color: #E65E50
+  background-color: rgba(#E65E50, .15)
+
+  &:before
+    +replace-text-with-svg("icon-error")
+
++at-breakpoint($pad)
+  .form-control
+    max-width: 240px
+
+    &.large
+      max-width: 360px
+
+  ul, ol
+    +adjust-font-size-to(15px, 1)
