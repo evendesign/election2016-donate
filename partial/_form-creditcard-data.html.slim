@@ -3,15 +3,15 @@ form.form
   .form-row
     label.form-label 信用卡卡號
     .form-content
-      input.form-control type="text"
+      input.form-control#cardNumber type="text" name="cardNumber" autocomplete="cc-number" inputmode="numeric" pattern="[0-9]*" maxlength="16"
   .form-row
     label.form-label 信用卡有效月年
     .form-content
-      input.form-control.tiny type="text"
+      input.form-control.tiny#cardExpirationMonth type="text" autocomplete="cc-exp-month" inputmode="numeric" pattern="[0-9]*" maxlength="2"
       label.span-label 月
-      input.form-control.tiny type="text"
+      input.form-control.tiny#cardExpirationYear type="text" autocomplete="cc-exp-year" inputmode="numeric" pattern="[0-9]*" maxlength="2"
       label.span-label 年
   .form-row
     label.form-label 信用卡背面末三碼
     .form-content
-      input.form-control.tiny type="text"
+      input.form-control.tiny type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3"

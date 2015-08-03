@@ -3,7 +3,8 @@
 .donate-form-detail
   .container
     .page-header
-      h1.logo 2016 蔡英文競選 小額捐款
+      h1.logo  LIGHT UP TAIWAN 點亮台灣
+      h2.title 2016 蔡英文競選 小額捐款
 
     .barcode-content
       .barcode-mobile
@@ -16,11 +17,7 @@
           .form-row
             label.form-label 捐款金額
             .form-content 100 元
-          .form-row
-            .form-content
-              img.barcode src="/images/barcode-example.png"
-              .form-warning
-                p 若手機螢幕太小，可以橫放方便掃描。若手機因螢幕解析度太低或無法辨識，建議列印或改用超商代碼繳費。
+
           .form-row
             label.form-label
             .form-content.text-center
@@ -38,7 +35,7 @@
             td.money colspan="2" 付款金額：NT$100
           tr
             td 付款資訊
-            td.stamp 代收通路商用印處
+            td.stamp-mobile-hide 代收通路商用印處
           tr
             td
               ul
@@ -46,7 +43,7 @@
                 li 捐款內容說明：政治獻金
                 li 捐款查詢代號：11468097_2015060364019
                 li 智付寶交易序號：15060315190188304
-            td rowspan="3"
+            td.stamp-mobile-hide rowspan="3"
           tr
             td 注意說明
           tr
@@ -65,9 +62,15 @@
             td.money colspan="2" 總收款金額：新台幣 100 元
           tr
             td 條碼資訊
-            td.stamp 收款通路商用印處
+            td.stamp-mobile-hide 收款通路商用印處
           tr
             td: img.barcode src="/images/barcode-example.png"
-            td
+            td.stamp-mobile-hide
+
+        form.form
+          .form-row
+            .form-content
+              .form-warning
+                p 若手機螢幕太小，可以橫放方便掃描。若手機因螢幕解析度太低或無法辨識，建議列印或改用超商代碼繳費。
 
         = render "/partial/form-action-button"

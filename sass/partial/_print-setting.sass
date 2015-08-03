@@ -1,6 +1,9 @@
-.logo
-  text-align: center
-  +adjust-font-size-to(18px)
+.page-header
+  .logo, .title
+    +leader()
+
+.donate-form-detail .container
+  +trailer(0)
 
 .site-info, .form-action-button
   display: none
@@ -23,3 +26,6 @@
   .money
     +adjust-font-size-to(16px, 1)
     font-weight: bold
+
+  .form
+    display: none

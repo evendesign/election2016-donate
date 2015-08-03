@@ -12,12 +12,14 @@
 
 .btn
   @extend %subpixel
-  display: inline-block
-  margin: 0 6px 6px 0
-  padding: 4px 22px
-  border: 2px solid $color-gray-white
+  display: block
+  width: 100%
+  max-width: 560px
+  margin: 12px auto
+  padding: 12px 0
+  border: none
   +border-radius($global-radius-width)
-  +adjust-font-size-to(15px)
+  +adjust-font-size-to(18px)
   background-image: none
   text-align: center
   text-shadow: none
@@ -40,6 +42,16 @@
     color: $color-gray
     border-color: $color-gray-white
     background-color: $color-gray-white
+
+  +at-breakpoint($pad)
+    display: inline-block
+    width: auto
+    margin: 0 6px 6px 0
+    padding: 4px 22px
+    +adjust-font-size-to(15px)
+    &.large
+      padding: 8px 28px
+      +adjust-font-size-to(18px)
 
 
 // Modifiers
@@ -76,17 +88,23 @@
 
 
 .btn_outline
-  border-color: $color-black
+  padding: 10px 0
+  border: 2px solid $color-black
   background-color: transparent
   &:hover
-    border-color: $color-black
-    background-color: $color-black
     color: white
+    background-color: $color-black
 
   &:disabled, &.is-disabled
     color: $color-gray
     border-color: $color-gray-white
     background-color: transparent
+
+  +at-breakpoint($pad)
+    padding: 2px 20px
+
+    &.large
+      padding: 6px 26px
 
 
 .btn_outline-primary

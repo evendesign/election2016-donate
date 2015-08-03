@@ -22,7 +22,7 @@ form.form
     .form-row
       label.form-label 繳費期限
       .form-content.is-important
-        | 2015-06-10 23:59:59 止
+        | 2015-07-31 23:59:59 止
         .form-warning
           p 請於繳費期限內持代碼至四大超商任一門市多媒體事務機列印付款單完成繳款
     .form-row
@@ -39,9 +39,23 @@ form.form
     .form-row
       label.form-label 繳費期限
       .form-content.is-important
-        | 2015-06-10 23:59:59 止
+        | 2015-07-31 23:59:59 止
         .form-warning
           p 請於繳費期限內至自有網路銀行或 ATM 櫃員機完成捐款
+    .form-row
+      label.form-label 捐款金額
+      .form-content 2000元
+
+  - if $payment_method == "barcode"
+    .form-row
+      label.form-label 捐款方式
+      .form-content 條碼繳費
+    .form-row
+      label.form-label 繳費期限
+      .form-content.is-important
+        | 2015-07-31 23:59:59 止
+        .form-warning
+          p 請下載條碼繳款單並於繳費期限內至自四大超商、農漁會完成捐款
     .form-row
       label.form-label 捐款金額
       .form-content 2000元

@@ -1,6 +1,6 @@
 .donate-form
   position: relative
-  +background(linear-gradient(to bottom, #F2F7F2 0%, #FFFFFF 100%))
+  background-color: #F8FAF8
 
   &.desktop .donate-method .select-creditcard
     width: calc(100% - 12px)
@@ -24,6 +24,22 @@
     &.underline
       +trailer(1)
       border-bottom: 1px solid #50B584
+
+  .form-part-title.underline
+    &:before
+      content: "1."
+
+  .form-part-title.underline ~ .form-part-title.underline
+    &:before
+      content: "2."
+
+  .form-part-title.underline ~ .form-part-title.underline ~ .form-part-title.underline
+    &:before
+      content: "3."
+
+  .form-part-title.underline ~ .form-part-title.underline ~ .form-part-title.underline ~ .form-part-title.underline
+    &:before
+      content: "4."
 
   .donate-money
     .money-amount
@@ -50,11 +66,13 @@
       background-color: rgba(white, .75)
       border: 1px solid transparent
       +transition(border .25s)
+      +appearance(none)
+      +border-radius(0)
 
 
       &:focus
         outline: none
-        border: 1px solid $color-gray-light
+        border: 1px solid lighten(#50B584, 20%)
 
     .form-note
       +leader(.5)
@@ -71,6 +89,7 @@
 
   .select-item
     +box-sizing(border-box)
+    position: relative
     float: left
     +padding-leader(1)
     +padding-trailer(1)
@@ -79,6 +98,22 @@
     border: 1px solid transparent
     +transition(background-color .25s, border .25s)
 
+    &:hover
+      border: 1px solid lighten(#50B584, 20%)
+
+    &.active:after
+      content: ""
+      position: absolute
+      top: 9px
+      right: 12px
+      width: 24px
+      height: 24px
+      background: url("/images/icon-selected.svg") no-repeat
+      opacity: .7
+
+    &.active:hover
+      border-color: transparent
+
   .donate-sign-type
     .sign-select
       +pie-clearfix
@@ -86,9 +121,6 @@
 
     .select-item
       width: calc(50% - 6px)
-
-      &:hover
-        border: 1px solid $color-gray-light
 
       .donate-select-name
         +adjust-font-size-to(16px)
@@ -114,9 +146,6 @@
       width: calc(50% - 12px)
       margin-bottom: 12px
       margin-left: 12px
-
-      &:hover
-        border: 1px solid $color-gray-light
 
     .select-creditcard
       &.active
@@ -158,9 +187,11 @@
       background-color: white
       border: 1px solid transparent
       +transition(border .25s)
+      +appearance(none)
+      +border-radius(0)
 
       &:hover
-        border: 1px solid $color-gray-light
+        border: 1px solid lighten(#50B584, 20%)
 
   .donate-form-detail
     max-width: 900px
@@ -198,6 +229,7 @@
         +adjust-font-size-to(18px)
 
   +at-breakpoint($desktop)
+    +background(radial-gradient(#fff 0%, #F3F6F3 55%))
     .container
       padding: 0 48px
 
