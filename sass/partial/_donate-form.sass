@@ -121,20 +121,15 @@
 
     .select-item
       width: calc(50% - 6px)
+      &.active
+        color: $color-black
+        background-color: #98C424
 
       .donate-select-name
         +adjust-font-size-to(16px)
 
-    .select-name
-      &.active
-        color: $color-black
-        background-color: #ACCC18
-
     .select-nameless
       margin-left: 12px
-      &.active
-        color: $color-black
-        background-color: #98C424
 
   .donate-method
     .method-select
@@ -146,32 +141,9 @@
       width: calc(50% - 12px)
       margin-bottom: 12px
       margin-left: 12px
-
-    .select-creditcard
       &.active
         color: $color-black
         background-color: #7AB835
-
-    .select-webatm
-      display: none
-      &.active
-        color: $color-black
-        background-color: #61AD41
-
-    .select-atm
-      &.active
-        color: $color-black
-        background-color: #53A644
-
-    .select-market
-      &.active
-        color: $color-black
-        background-color: #3B9948
-
-    .select-barcode
-      &.active
-        color: $color-black
-        background-color: #2A904B
 
   .donate-action
     +leader()

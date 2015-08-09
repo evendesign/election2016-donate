@@ -258,6 +258,16 @@ form { margin-bottom: 48px; }
 .btn_outline-primary:hover { border-color: #50b584; background-color: #50b584; color: white; }
 .btn_outline-primary:disabled, .btn_outline-primary.is-disabled { color: #999999; border-color: #f1f1f1; background-color: transparent; }
 
+.event-switcher:after { content: ""; display: table; clear: both; }
+.event-switcher .donate-entrance, .event-switcher .smartcards-entrance { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: block; width: 50%; padding: 12px; text-align: center; }
+.event-switcher .donate-entrance:hover, .event-switcher .smartcards-entrance:hover { text-decoration: none; }
+.event-switcher .donate-entrance { float: left; color: #00343e; background-color: #f3f6f3; }
+.event-switcher .smartcards-entrance { float: right; color: white; background-color: #00343e; }
+.event-switcher .title { font-size: 15px; line-height: 24px; }
+.event-switcher .title span { display: inline-block; }
+@media (min-width: 47em) { .event-switcher .donate-entrance, .event-switcher .smartcards-entrance { padding: 18px; }
+  .event-switcher .title { font-size: 18px; line-height: 24px; } }
+
 .hero { position: relative; }
 .hero .container { position: relative; }
 .hero .header { position: relative; padding: 24px; z-index: 10; margin-bottom: 178px; }
@@ -407,19 +417,13 @@ form { margin-bottom: 48px; }
 .donate-form .donate-sign-type .sign-select { text-align: center; }
 .donate-form .donate-sign-type .sign-select:after { content: ""; display: table; clear: both; }
 .donate-form .donate-sign-type .select-item { width: calc(50% - 6px); }
+.donate-form .donate-sign-type .select-item.active { color: #212121; background-color: #98c424; }
 .donate-form .donate-sign-type .select-item .donate-select-name { font-size: 16px; line-height: 24px; }
-.donate-form .donate-sign-type .select-name.active { color: #212121; background-color: #accc18; }
 .donate-form .donate-sign-type .select-nameless { margin-left: 12px; }
-.donate-form .donate-sign-type .select-nameless.active { color: #212121; background-color: #98c424; }
 .donate-form .donate-method .method-select { margin-left: -12px; text-align: center; }
 .donate-form .donate-method .method-select:after { content: ""; display: table; clear: both; }
 .donate-form .donate-method .select-item { width: calc(50% - 12px); margin-bottom: 12px; margin-left: 12px; }
-.donate-form .donate-method .select-creditcard.active { color: #212121; background-color: #7ab835; }
-.donate-form .donate-method .select-webatm { display: none; }
-.donate-form .donate-method .select-webatm.active { color: #212121; background-color: #61ad41; }
-.donate-form .donate-method .select-atm.active { color: #212121; background-color: #53a644; }
-.donate-form .donate-method .select-market.active { color: #212121; background-color: #3b9948; }
-.donate-form .donate-method .select-barcode.active { color: #212121; background-color: #2a904b; }
+.donate-form .donate-method .select-item.active { color: #212121; background-color: #7ab835; }
 .donate-form .donate-action { margin-top: 24px; text-align: right; }
 .donate-form .donate-action .next-button { margin: 0; padding: 0; border: 0; display: inline-block; padding: 18px; width: 100%; font-weight: bold; color: #2a904b; background-color: white; border: 1px solid transparent; -webkit-transition: border 0.25s; -moz-transition: border 0.25s; -o-transition: border 0.25s; transition: border 0.25s; -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; }
 .donate-form .donate-action .next-button:hover { border: 1px solid #98d3b6; }
@@ -524,6 +528,33 @@ form { margin-bottom: 48px; }
   .footer .site-list:after { content: ""; display: table; clear: both; }
   .footer .site { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; padding: 0 12px; width: 33.3333%; } }
 @media (min-width: 71em) { .footer .site { padding: 0 24px; } }
+
+.page-inner.index { padding-bottom: 0; }
+.page-inner.index:before, .page-inner.index:after { display: none; }
+
+.donate-index:after { content: ""; display: table; clear: both; }
+.donate-index .donate-entrance, .donate-index .smartcards-entrance { display: block; }
+.donate-index .donate-entrance:hover, .donate-index .smartcards-entrance:hover { text-decoration: none; }
+.donate-index .smartcards-entrance { background-color: lightgrey; }
+.donate-index .title { margin-bottom: 12px; color: #212121; font-size: 26px; line-height: 36px; }
+.donate-index .entrance { display: inline-block; padding: 3px 12px; font-size: 15px; line-height: 24px; color: white; font-weight: bold; background-color: #50b584; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
+.donate-index .donate-content, .donate-index .smartcards-content { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; min-height: 50vh; padding: 24px; }
+.donate-index .donate-content { background-image: url("/images/index-donate-background.svg"); background-position: right bottom; background-repeat: no-repeat; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+.donate-index .donate-content .title { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/index-donate-title.png?1438938129'); background-repeat: no-repeat; background-position: 50% 50%; width: 210px; height: 70px; background-image: none, url('/images/index-donate-title.svg?1438938129'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+.donate-index .smartcards-content { background-image: url("/images/index-smartcards-background.jpg"); background-position: center center; background-repeat: no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; }
+.donate-index .smartcards-content .title { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/index-smartcards-title.png?1439117340'); background-repeat: no-repeat; background-position: 50% 50%; width: 218px; height: 64px; background-image: none, url('/images/index-smartcards-title.svg?1439117341'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+@media (min-width: 47em) { .donate-index .title { font-size: 30px; line-height: 36px; }
+  .donate-index .donate-content, .donate-index .smartcards-content { padding: 48px 48px 284px; }
+  .donate-index .donate-content { -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; } }
+@media (min-width: 1023px) { .donate-index .title { margin-bottom: 24px; font-size: 34px; line-height: 42px; }
+  .donate-index .donate-entrance { float: left; width: 50%; }
+  .donate-index .smartcards-entrance { float: right; width: 50%; }
+  .donate-index .donate-content, .donate-index .smartcards-content { max-width: 760px; height: 100vh; padding: 72px; }
+  .donate-index .donate-content { margin: 0 0 0 auto; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+  .donate-index .smartcards-content { margin: 0 auto 0 0; } }
+@media screen and (device-aspect-ratio: 40 / 71) { .donate-index .donate-content, .donate-index .smartcards-content { min-height: 284px; } }
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) { .donate-index .donate-content, .donate-index .smartcards-content { min-height: 384px; } }
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) { .donate-index .donate-content, .donate-index .smartcards-content { min-height: 512px; } }
 
 .page-inner { position: relative; padding-bottom: 50%; overflow: hidden; }
 .page-inner:before, .page-inner:after { content: ""; position: absolute; bottom: 0; margin-bottom: 10%; width: 100%; height: 0; padding-bottom: 20%; background-repeat: no-repeat; background-position: bottom; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }

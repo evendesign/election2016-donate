@@ -1,0 +1,34 @@
+.event-switcher
+  +pie-clearfix
+
+  .donate-entrance, .smartcards-entrance
+    +box-sizing(border-box)
+    display: block
+    width: 50%
+    padding: 12px
+    text-align: center
+
+    &:hover
+      text-decoration: none
+
+  .donate-entrance
+    float: left
+    color: #00343E
+    background-color: #F3F6F3
+
+  .smartcards-entrance
+    float: right
+    color: white
+    background-color: #00343E
+
+  .title
+    +adjust-font-size-to(15px)
+
+    span
+      display: inline-block
+
+  +at-breakpoint($pad)
+    .donate-entrance, .smartcards-entrance
+      padding: 18px
+    .title
+      +adjust-font-size-to(18px)

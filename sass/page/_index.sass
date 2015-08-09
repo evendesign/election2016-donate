@@ -1,0 +1,105 @@
+.page-inner.index
+  padding-bottom: 0
+  &:before, &:after
+    display: none
+
+.donate-index
+  +pie-clearfix
+
+  .donate-entrance, .smartcards-entrance
+    display: block
+
+    &:hover
+      text-decoration: none
+
+  .smartcards-entrance
+    background-color: lightgray
+
+  .title
+    +trailer(.5)
+    color: $color-black
+    +adjust-font-size-to(26px, 1.5)
+
+  .entrance
+    display: inline-block
+    padding: 3px 12px
+    +adjust-font-size-to(15px)
+    color: white
+    font-weight: bold
+    background-color: #50B584
+    +border-radius(5px)
+
+  .donate-content, .smartcards-content
+    +box-sizing(border-box)
+    min-height: 50vh
+    padding: 24px
+
+  .donate-content
+    background-image: url('/images/index-donate-background.svg')
+    background-position: right bottom
+    background-repeat: no-repeat
+    +background-size(contain)
+
+    .title
+      +replace-text-with-svg('index-donate-title')
+
+  .smartcards-content
+    background-image: url('/images/index-smartcards-background.jpg')
+    background-position: center center
+    background-repeat: no-repeat
+    +background-size(cover)
+
+    .title
+      +replace-text-with-svg('index-smartcards-title')
+
+  +at-breakpoint($pad)
+
+    .title
+      +adjust-font-size-to(30px, 1.5)
+
+    .donate-content, .smartcards-content
+      padding: 48px 48px 284px
+
+    .donate-content
+      +background-size(cover)
+
+
+  +at-breakpoint(1023px 12)
+
+    .title
+      +trailer()
+      +adjust-font-size-to(34px, 1.75)
+
+    .donate-entrance
+      float: left
+      width: 50%
+
+    .smartcards-entrance
+      float: right
+      width: 50%
+
+    .donate-content, .smartcards-content
+      max-width: ( 1520 / 2 )+px
+      height: 100vh
+      padding: 72px
+
+    .donate-content
+      margin: 0 0 0 auto
+      +background-size(contain)
+
+    .smartcards-content
+      margin: 0 auto 0 0
+
+  // for iOS 7 mediaquery
+  @media screen and (device-aspect-ratio: 40/71)
+    .donate-content, .smartcards-content
+      min-height: 284px
+
+  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)
+    .donate-content, .smartcards-content
+      min-height: 384px
+
+  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)
+    .donate-content, .smartcards-content
+      min-height: 512px
+

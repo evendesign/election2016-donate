@@ -6,8 +6,11 @@ html lang="zh-TW"
     = render "/layout_og"
   body
     .page
-      .page-inner.index
+      .page-inner
         = yield
-    = render "/layout_foot"
+        .page-bottom-illustrator
+      = render "/partial/site-info"
+    = render "/partial/footer"
+    = render "/donate/layout_foot"
     = render "/layout_livereload"
     = render "/layout_ga.erb"

@@ -222,19 +222,13 @@ body { background-color: #183840; position: relative; }
 .donate-form .donate-sign-type .sign-select { text-align: center; }
 .donate-form .donate-sign-type .sign-select:after { content: ""; display: table; clear: both; }
 .donate-form .donate-sign-type .select-item { width: calc(50% - 6px); }
+.donate-form .donate-sign-type .select-item.active { color: #212121; background-color: #98c424; }
 .donate-form .donate-sign-type .select-item .donate-select-name { font-size: 16px; line-height: 24px; }
-.donate-form .donate-sign-type .select-name.active { color: #212121; background-color: #accc18; }
 .donate-form .donate-sign-type .select-nameless { margin-left: 12px; }
-.donate-form .donate-sign-type .select-nameless.active { color: #212121; background-color: #98c424; }
 .donate-form .donate-method .method-select { margin-left: -12px; text-align: center; }
 .donate-form .donate-method .method-select:after { content: ""; display: table; clear: both; }
 .donate-form .donate-method .select-item { width: calc(50% - 12px); margin-bottom: 12px; margin-left: 12px; }
-.donate-form .donate-method .select-creditcard.active { color: #212121; background-color: #7ab835; }
-.donate-form .donate-method .select-webatm { display: none; }
-.donate-form .donate-method .select-webatm.active { color: #212121; background-color: #61ad41; }
-.donate-form .donate-method .select-atm.active { color: #212121; background-color: #53a644; }
-.donate-form .donate-method .select-market.active { color: #212121; background-color: #3b9948; }
-.donate-form .donate-method .select-barcode.active { color: #212121; background-color: #2a904b; }
+.donate-form .donate-method .select-item.active { color: #212121; background-color: #7ab835; }
 .donate-form .donate-action { margin-top: 24px; text-align: right; }
 .donate-form .donate-action .next-button { margin: 0; padding: 0; border: 0; display: inline-block; padding: 18px; width: 100%; font-weight: bold; color: #2a904b; background-color: white; border: 1px solid transparent; -webkit-transition: border 0.25s; -moz-transition: border 0.25s; -o-transition: border 0.25s; transition: border 0.25s; -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; border-radius: 0; }
 .donate-form .donate-action .next-button:hover { border: 1px solid #98d3b6; }
