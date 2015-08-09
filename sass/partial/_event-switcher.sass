@@ -1,5 +1,6 @@
 .event-switcher
   +pie-clearfix
+  background-color: #F3F6F3
 
   .donate-entrance, .smartcards-entrance
     +box-sizing(border-box)
@@ -15,20 +16,35 @@
     float: left
     color: #00343E
     background-color: #F3F6F3
+    +transition(background-color .5s)
+
+    &:hover
+      background-color: lighten(#F3F6F3, 3%)
 
   .smartcards-entrance
     float: right
     color: white
     background-color: #00343E
+    +transition(background-color .5s)
+
+    &:hover
+      background-color: lighten(#00343E, 3%)
 
   .title
     +adjust-font-size-to(15px)
 
-    span
-      display: inline-block
+    .bold
+      font-weight: bold
+      @extend %subpixel
+
+    .break
+      display: block
 
   +at-breakpoint($pad)
     .donate-entrance, .smartcards-entrance
       padding: 18px
     .title
       +adjust-font-size-to(18px)
+
+      .break
+        display: inline-block

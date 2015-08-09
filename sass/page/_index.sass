@@ -20,16 +20,28 @@
   .entrance
     display: inline-block
     padding: 3px 12px
-    +adjust-font-size-to(15px)
+    +adjust-font-size-to(18px, 1.25)
     color: white
+    text-align: center
     font-weight: bold
     background-color: #50B584
     +border-radius(5px)
+
+  .entrance-note
+    +adjust-font-size-to(12px)
+    color: $color-black
+
+    .bold
+      font-weight: bold
+      @extend %subpixel
 
   .donate-content, .smartcards-content
     +box-sizing(border-box)
     min-height: 50vh
     padding: 24px
+
+  .donate-entrance
+    +background(radial-gradient(#fff 0%, #F3F6F3 55%))
 
   .donate-content
     background-image: url('/images/index-donate-background.svg')
@@ -64,7 +76,6 @@
   +at-breakpoint(1023px 12)
 
     .title
-      +trailer()
       +adjust-font-size-to(34px, 1.75)
 
     .donate-entrance
@@ -78,7 +89,7 @@
     .donate-content, .smartcards-content
       max-width: ( 1520 / 2 )+px
       height: 100vh
-      padding: 72px
+      padding: 56px
 
     .donate-content
       margin: 0 0 0 auto
