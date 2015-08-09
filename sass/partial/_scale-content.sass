@@ -1,24 +1,24 @@
 .scale-content
   position: relative
 
-  +at-breakpoint($desktop)
+  @include at-breakpoint($desktop)
     $delay: .5
     $delay-sec: $delay + s
     .page
       position: relative
       z-index: 105
-      +transition(transform .2s .3s)
+      @include transition(transform .2s .3s)
 
     .page-inner
       min-height: 110vh // 避免頁面內容不足以撐滿一個畫面的時候，導致 footer 無法正常使用的問題。
-      +transform-origin(center, bottom)
-      +transition(transform .2s .3s, border-radius .2s .3s)
-      +box-shadow(0 0 50px rgba(black, .5))
+      @include transform-origin(center, bottom)
+      @include transition(transform .2s .3s, border-radius .2s .3s)
+      @include box-shadow(0 0 50px rgba(black, .5))
 
     .site-info
       display: block
-      +opacity(0)
-      +transition(opacity .3s)
+      @include opacity(0)
+      @include transition(opacity .3s)
 
     .footer
       padding: 0
@@ -37,8 +37,8 @@
         width: 50%
         padding-top: 50%
         height: 0
-        +transform( translate(-100%, 100%) rotate(-120deg) )
-        +transition(.3s)
+        @include transform( translate(-100%, 100%) rotate(-120deg) )
+        @include transition(.3s)
         max-width: 700px
         background-position: left bottom
 
@@ -46,59 +46,59 @@
         position: absolute
         right: 128px
         bottom: 128px
-        +opacity(0)
-        +transition(.3s)
+        @include opacity(0)
+        @include transition(.3s)
 
       .copy
         right: 130px
         bottom: 72px
 
       .site
-        +opacity(0)
-        +transform(scale(0))
-        +transition(transform .3s, opacity .3s)
+        @include opacity(0)
+        @include transform(scale(0))
+        @include transition(transform .3s, opacity .3s)
 
       .site-list
         padding-top: 180px
 
       .site-meta
-        +opacity(0)
-        +transition(opacity .3s)
+        @include opacity(0)
+        @include transition(opacity .3s)
 
     &.is-scaled
       .page
-        +transition(transform .5s)
+        @include transition(transform .5s)
 
       .page-inner
-        +transform(scale(.5))
-        +border-radius(0 0 10px 10px)
-        +transition(transform .5s, border-radius .5s)
+        @include transform(scale(.5))
+        @include border-radius(0 0 10px 10px)
+        @include transition(transform .5s, border-radius .5s)
 
       .site-info
-        +opacity(1)
-        +transition(opacity 1s 1s)
+        @include opacity(1)
+        @include transition(opacity 1s 1s)
 
       .footer
         .site
-          +opacity(1)
-          +transform(scale(1))
+          @include opacity(1)
+          @include transform(scale(1))
 
         &:before
-          +transform( translate(0,0) rotate(0deg) )
-          +transition(10s .5s)
+          @include transform( translate(0,0) rotate(0deg) )
+          @include transition(10s .5s)
 
         .footer-logo
-          +opacity(1)
-          +transition(3s 1s)
+          @include opacity(1)
+          @include transition(3s 1s)
 
       @for $i from 1 through 3
         .site:nth-child(#{$i})
           $site-delay: .1 * $i + $delay + s
-          +transition(transform .5s $site-delay)
+          @include transition(transform .5s $site-delay)
           .site-meta
             $site-meta-delay: .1 * $i + 1 + s
-            +opacity(1)
-            +transition(opacity 1s $site-meta-delay)
+            @include opacity(1)
+            @include transition(opacity 1s $site-meta-delay)
 
   @media (min-width: 1025px) and (max-height: 768px)
     .footer .footer-logo

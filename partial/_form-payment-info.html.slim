@@ -1,0 +1,61 @@
+h2.form-part-title.underline 本次捐款付款資訊
+form.form
+
+  - if $payment_method == "creditcard"
+    .form-row
+      label.form-label 捐款方式
+      .form-content 信用卡
+    .form-row
+      label.form-label 回應訊息
+      .form-content.is-important 授權成功！授權碼：123456 信用卡號末四碼：0987
+    .form-row
+      label.form-label 捐款金額
+      .form-content 2000元
+
+  - if $payment_method == "market_serialnumber"
+    .form-row
+      label.form-label 捐款方式
+      .form-content 超商代碼繳費
+    .form-row
+      label.form-label 回應訊息
+      .form-content.is-important 超商代碼：LCB50603649008
+    .form-row
+      label.form-label 繳費期限
+      .form-content.is-important
+        | 2015-07-31 23:59:59 止
+        .form-warning
+          p 請於繳費期限內持代碼至四大超商任一門市多媒體事務機列印付款單完成繳款
+    .form-row
+      label.form-label 捐款金額
+      .form-content 2000元
+
+  - if $payment_method == "atm_transfer"
+    .form-row
+      label.form-label 捐款方式
+      .form-content ATM 轉帳
+    .form-row
+      label.form-label 回應訊息
+      .form-content.is-important 銀行代碼：兆豐銀行（017） 捐款帳號：3660251614902619
+    .form-row
+      label.form-label 繳費期限
+      .form-content.is-important
+        | 2015-07-31 23:59:59 止
+        .form-warning
+          p 請於繳費期限內至自有網路銀行或 ATM 櫃員機完成捐款
+    .form-row
+      label.form-label 捐款金額
+      .form-content 2000元
+
+  - if $payment_method == "barcode"
+    .form-row
+      label.form-label 捐款方式
+      .form-content 條碼繳費
+    .form-row
+      label.form-label 繳費期限
+      .form-content.is-important
+        | 2015-07-31 23:59:59 止
+        .form-warning
+          p 請下載條碼繳款單並於繳費期限內至自四大超商、農漁會完成捐款
+    .form-row
+      label.form-label 捐款金額
+      .form-content 2000元

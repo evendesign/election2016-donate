@@ -1,0 +1,26 @@
+form.form.form-action-button
+  - if $action_state == "pay_ready"
+    .form-row
+      label.form-label
+      .form-content
+        a href="/form/donate-form-step2.html"
+          input.btn.large.btn_primary type="button" value="下一步"
+        input.btn.large type="submit" value="重填"
+
+  - if $action_state == "pay_success" && $payment_method != "barcode"
+    .form-row
+      label.form-label
+      .form-content
+        a.btn.large.btn_primary href="/" 返回首頁
+        input.btn.large.btn_primary type="submit" value="列印本頁資訊"
+        .form-warning
+          p 若您沒有提供 Email，請列印本頁或紀錄本次捐款單號，以便後續確認或查詢。
+
+  - if $action_state == "pay_success" && $payment_method == "barcode"
+    .form-row
+      label.form-label
+      .form-content.text-center
+        input.btn.large.btn_primary type="submit" value="下載條碼繳款單（PDF）"
+        a.btn.large.btn_primary href="/" 返回首頁
+
+

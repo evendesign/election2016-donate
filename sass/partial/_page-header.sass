@@ -1,0 +1,23 @@
+.page-header
+  +pie-clearfix
+  .logo
+    float: left
+    +leader()
+    +replace-text-with-svg("LIGHT-UP-TAIWAN-only")
+    width: 69px
+    height: 52px
+    font-size: 0 // for opera android version
+  .title
+    float: right
+    +leader()
+    +replace-text-with-svg("office-donate")
+    width: 152px
+    height: 52px
+    font-size: 0 // for opera android version
+
+  +at-breakpoint($pad)
+    .logo
+      +leader(2)
+      +replace-text-with-svg("vi-en-zh-onlight-2")
+    .title
+      +leader(2)

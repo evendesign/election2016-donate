@@ -1,0 +1,31 @@
+.page-header
+  .logo, .title
+    +leader()
+
+.donate-form-detail .container
+  +trailer(0)
+
+.site-info, .form-action-button
+  display: none
+
+.footer
+  .container, .footer-logo
+    display: none
+
+  .copy
+    +adjust-font-size-to(12px)
+    text-align: center
+
+.barcode-print
+  table
+    +adjust-font-size-to(12px, 0.75)
+
+  td
+    border: 1px solid $color-gray
+
+  .money
+    +adjust-font-size-to(16px, 1)
+    font-weight: bold
+
+  .form
+    display: none

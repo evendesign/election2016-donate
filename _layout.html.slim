@@ -6,10 +6,8 @@ html lang="zh-TW"
     = render "/layout_og"
   body
     .page
-      .page-inner
+      .page-inner.index
         = yield
-      = render "/partial/site-info"
-    = render "/partial/footer"
     = render "/layout_foot"
     = render "/layout_livereload"
     = render "/layout_ga.erb"

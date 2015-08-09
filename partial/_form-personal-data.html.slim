@@ -1,0 +1,104 @@
+h2.form-part-title.underline 捐款人基本資料
+- if $sign_type == "name"
+  form.form
+    .form-row
+      label.form-label 是否具名
+      .form-content 具名捐款
+    .form-row
+      label.form-label 捐款方式
+      .form-content 信用卡捐款
+    .form-row
+      label.form-label 捐款人姓名（公司名稱）
+      .form-content
+        input.form-control type="text"
+    .form-row
+      label.form-label 身分證字號（統一編號）
+      .form-content
+        input.form-control.small type="text"
+    .form-row
+      label.form-label 聯絡電話（行動電話）
+      .form-content
+        input.form-control.small type="tel"
+    .form-row
+      label.form-label Email
+      .form-content
+        input.form-control.large type="email"
+    .form-row
+      label.form-label 戶籍地址
+      .form-content
+        select.form-select
+          option value="item" 縣市
+        select.form-select
+          option value="item" 鄉鎮市區
+        input.form-control.large type="text"
+    .form-row
+      label.form-label 通訊地址
+      .form-content
+        select.form-select
+          option value="item" 縣市
+        select.form-select
+          option value="item" 鄉鎮市區
+        input.form-control.large type="text"
+        .group-checkbox
+          label
+            input type="checkbox" name="interest" 同戶籍地址
+    .form-row
+      label.form-label 是否寄送收據
+      .form-content
+        .group-radio
+          label
+            input type="radio" name="receipt" 要
+          label
+            input type="radio" name="receipt" 不要
+    .form-row
+      label.form-label 收據寄送地址
+      .form-content
+        select.form-select
+          option value="item" 縣市
+        select.form-select
+          option value="item" 鄉鎮市區
+        input.form-control.large type="text"
+        .group-radio
+          label
+            input type="radio" name="address-sync" 同戶籍地址
+          label
+            input type="radio" name="address-sync" 同通訊地址
+
+- if $sign_type == "nameless"
+  form.form
+    .form-row
+      label.form-label 捐款方式
+      .form-content 匿名捐款
+    .form-row
+      label.form-label 我來自
+      .form-content
+        select.form-select
+          option value="item" 不透露
+          option value="item" 台北市
+          option value="item" 新北市
+          option value="item" 桃園市
+          option value="item" 台中市
+          option value="item" 台南市
+          option value="item" 高雄市
+          option value="item" 基隆市
+          option value="item" 新竹市
+          option value="item" 嘉義市
+          option value="item" 新竹縣
+          option value="item" 苗栗縣
+          option value="item" 彰化縣
+          option value="item" 南投縣
+          option value="item" 雲林縣
+          option value="item" 嘉義縣
+          option value="item" 屏東縣
+          option value="item" 宜蘭縣
+          option value="item" 花蓮縣
+          option value="item" 台東縣
+          option value="item" 澎湖縣
+          option value="item" 金門縣
+          option value="item" 連江縣
+    .form-row
+      label.form-label  Email
+      .form-content
+        input.form-control.large type="email"
+        .form-tip
+          p 建議您提供Email信箱,方便寄送捐款通知,以便後續確認及查詢

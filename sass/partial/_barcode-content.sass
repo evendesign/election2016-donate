@@ -1,0 +1,90 @@
+.barcode-content
+  .barcode-print
+    display: none
+  &.desktop
+    .barcode-mobile
+      display: none
+    .barcode-print
+      display: block
+
+.barcode-mobile
+  .barcode
+    display: block
+    margin: 0 auto
+    width: 100%
+
+.barcode-print
+  .title
+    +trailer()
+    text-align: center
+
+    h2
+      +trailer(.25)
+      +adjust-font-size-to(28px, 1.5)
+      font-weight: bold
+
+  table
+    +trailer()
+    width: 100%
+    +adjust-font-size-to(15px)
+    border-collapse: collapse
+    background-color: white
+
+  td
+    +box-sizing(border-box)
+    display: block
+    padding: 3px 6px
+    border: 1px solid $color-gray-light
+    border-bottom: none
+
+  tr:last-child td
+    border-bottom: 1px solid $color-gray-light
+
+  ul, ol
+    +trailer(0)
+
+  .money
+    +adjust-font-size-to(18px, 1.25)
+    font-weight: bold
+
+  .barcode
+    display: block
+    margin: 0 auto
+
+    &.mobile
+      width: 100%
+
+  .cutline
+    position: relative
+    display: block
+    +trailer()
+    text-align: center
+    border: none
+
+    &:before
+      content: ""
+      position: absolute
+      top: 50%
+      left: 0
+      width: 45%
+      border-top: 1px dashed $color-gray
+
+    &:after
+      content: ""
+      position: absolute
+      top: 50%
+      left: 55%
+      width: 45%
+      border-top: 1px dashed $color-gray
+
+  .stamp-mobile-hide
+    display: none
+
+  +at-breakpoint($desktop)
+    td
+      display: table-cell
+      border-bottom: 1px solid $color-gray-light
+
+    .stamp-mobile-hide
+      display: table-cell
+      width: 220px

@@ -1,0 +1,76 @@
+- $action_state = "pay_barcode"
+
+.donate-form-detail
+  .container
+    .page-header
+      h1.logo  LIGHT UP TAIWAN 點亮台灣
+      h2.title 2016 蔡英文競選 小額捐款
+
+    .barcode-content
+      .barcode-mobile
+        = render "/partial/form-donate-account-info"
+        h2.form-part-title.underline 四大超商、農漁會可代收款項
+        form.form
+          .form-row
+            label.form-label 繳費期限
+            .form-content 2015-07-31
+          .form-row
+            label.form-label 捐款金額
+            .form-content 100 元
+
+          .form-row
+            label.form-label
+            .form-content.text-center
+              a.btn.btn_primary href="/" 返回首頁
+
+
+      .barcode-print
+        .title
+          h2 捐款付款單
+          .date 付款截止日：2015-07-31
+        table
+          tr
+            td colspan="2" 客戶留存聯
+          tr
+            td.money colspan="2" 付款金額：NT$100
+          tr
+            td 付款資訊
+            td.stamp-mobile-hide 代收通路商用印處
+          tr
+            td
+              ul
+                li 商店代號：11468097
+                li 捐款內容說明：政治獻金
+                li 捐款查詢代號：11468097_2015060364019
+                li 智付寶交易序號：15060315190188304
+            td.stamp-mobile-hide rowspan="3"
+          tr
+            td 注意說明
+          tr
+            td
+              ol
+                li 本條碼單可至四大超商、農漁會繳款。
+                li 您完成捐款後如有任何問題請洽原受捐單位，繳款通路不提供退款服務。
+                li 您完成捐款後，受捐單位約需 3~4 個工作天確認繳費成功。
+
+        .cutline 裁剪線
+
+        table
+          tr
+            td colspan="2" 代收款通路收執聯
+          tr
+            td.money colspan="2" 總收款金額：新台幣 100 元
+          tr
+            td 條碼資訊
+            td.stamp-mobile-hide 收款通路商用印處
+          tr
+            td: img.barcode src="/images/barcode-example.png"
+            td.stamp-mobile-hide
+
+        form.form
+          .form-row
+            .form-content
+              .form-warning
+                p 若手機螢幕太小，可以橫放方便掃描。若手機因螢幕解析度太低或無法辨識，建議列印或改用超商代碼繳費。
+
+        = render "/partial/form-action-button"

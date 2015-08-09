@@ -1,0 +1,50 @@
+.container
+  .page-header
+    h1.logo  LIGHT UP TAIWAN 點亮台灣
+    h2.title 2016 蔡英文競選 小額捐款
+
+  .donate-select
+    .donate-money
+      h2.form-part-title 捐款金額
+
+      .money-amount
+        .input-unit $
+        input type="text" value="20000"
+
+      ul.form-note
+        li 匿名捐款金額不可超過一萬元。
+        li 使用超商條 / 代碼捐款，金額不可超過二萬元。
+        li 使用網路 ATM / ATM 櫃員機轉帳，請注意轉帳金額上限！（依各家銀行規定）
+
+    .donate-sign-type
+      h2.form-part-title 是否具名
+      .sign-select
+        .select-item.select-name
+          img.donate-select-icon src="/images/icon-name.svg"
+          span.donate-select-name 具名捐款
+        .select-item.select-nameless
+          img.donate-select-icon src="/images/icon-nameless.svg"
+          span.donate-select-name 匿名捐款
+
+    .donate-method
+      h2.form-part-title 捐款方式
+      .method-select
+        .select-item.select-creditcard
+          img.donate-select-icon src="/images/icon-creditcard.svg"
+          span.donate-select-name 信用卡
+        .select-item.select-webatm
+          img.donate-select-icon src="/images/icon-webatm.svg"
+          span.donate-select-name WebATM
+        .select-item.select-atm
+          img.donate-select-icon src="/images/icon-atm.svg"
+          span.donate-select-name ATM 轉帳
+        .select-item.select-market
+          img.donate-select-icon src="/images/icon-market.svg"
+          span.donate-select-name 超商代碼繳費
+        .select-item.select-barcode
+          img.donate-select-icon src="/images/icon-barcode.svg"
+          span.donate-select-name 條碼繳費
+
+    .donate-action
+      a href="/form/donate-form-step1.html"
+        input.next-button type="button" value="下一步"
