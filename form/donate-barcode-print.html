@@ -27,8 +27,11 @@
           <div class="container">
             <div class="page-header">
               <h1 class="logo">
-                2016 蔡英文競選 小額捐款
+                LIGHT UP TAIWAN 點亮台灣
               </h1>
+              <h2 class="title">
+                2016 蔡英文競選 小額捐款
+              </h2>
             </div>
             <div class="barcode-content">
               <div class="barcode-mobile">
@@ -78,16 +81,6 @@
                     </div>
                   </div>
                   <div class="form-row">
-                    <div class="form-content">
-                      <img class="barcode" src="/images/barcode-example.png">
-                      <div class="form-warning">
-                        <p>
-                          若手機螢幕太小，可以橫放方便掃描。若手機因螢幕解析度太低或無法辨識，建議列印或改用超商代碼繳費。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row">
                     <label class="form-label"></label>
                     <div class="form-content text-center">
                       <a class="btn btn_primary" href="/">返回首頁</a>
@@ -119,7 +112,7 @@
                     <td>
                       付款資訊
                     </td>
-                    <td class="stamp">
+                    <td class="stamp-mobile-hide">
                       代收通路商用印處
                     </td>
                   </tr>
@@ -140,7 +133,7 @@
                         </li>
                       </ul>
                     </td>
-                    <td rowspan="3"></td>
+                    <td class="stamp-mobile-hide" rowspan="3"></td>
                   </tr>
                   <tr>
                     <td>
@@ -181,7 +174,7 @@
                     <td>
                       條碼資訊
                     </td>
-                    <td class="stamp">
+                    <td class="stamp-mobile-hide">
                       收款通路商用印處
                     </td>
                   </tr>
@@ -189,16 +182,21 @@
                     <td>
                       <img class="barcode" src="/images/barcode-example.png">
                     </td>
-                    <td></td>
+                    <td class="stamp-mobile-hide"></td>
                   </tr>
                 </table>
-                <form class="form form-action-button">
+                <form class="form">
                   <div class="form-row">
-                    <label class="form-label"></label>
-                    <div class="form-content text-center">
-                      <input class="btn btn_primary" type="submit" value="列印條碼繳款單"><a class="btn" href="/">返回首頁</a>
+                    <div class="form-content">
+                      <div class="form-warning">
+                        <p>
+                          若手機螢幕太小，可以橫放方便掃描。若手機因螢幕解析度太低或無法辨識，建議列印或改用超商代碼繳費。
+                        </p>
+                      </div>
                     </div>
                   </div>
+                </form>
+                <form class="form form-action-button">
                 </form>
               </div>
             </div>

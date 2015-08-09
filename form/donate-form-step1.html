@@ -27,8 +27,11 @@
           <div class="container">
             <div class="page-header">
               <h1 class="logo">
-                2016 蔡英文競選 小額捐款
+                LIGHT UP TAIWAN 點亮台灣
               </h1>
+              <h2 class="title">
+                2016 蔡英文競選 小額捐款
+              </h2>
             </div>
             <h2 class="form-part-title underline">
               信用卡資料
@@ -37,19 +40,19 @@
               <div class="form-row">
                 <label class="form-label">信用卡卡號</label>
                 <div class="form-content">
-                  <input class="form-control" type="text">
+                  <input autocomplete="cc-number" class="form-control" id="cardNumber" inputmode="numeric" maxlength="16" name="cardNumber" pattern="[0-9]*" type="text">
                 </div>
               </div>
               <div class="form-row">
                 <label class="form-label">信用卡有效月年</label>
                 <div class="form-content">
-                  <input class="form-control tiny" type="text"><label class="span-label">月</label><input class="form-control tiny" type="text"><label class="span-label">年</label>
+                  <input autocomplete="cc-exp-month" class="form-control tiny" id="cardExpirationMonth" inputmode="numeric" maxlength="2" pattern="[0-9]*" type="text"><label class="span-label">月</label><input autocomplete="cc-exp-year" class="form-control tiny" id="cardExpirationYear" inputmode="numeric" maxlength="2" pattern="[0-9]*" type="text"><label class="span-label">年</label>
                 </div>
               </div>
               <div class="form-row">
                 <label class="form-label">信用卡背面末三碼</label>
                 <div class="form-content">
-                  <input class="form-control tiny" type="text">
+                  <input class="form-control tiny" inputmode="numeric" maxlength="3" pattern="[0-9]*" type="text">
                 </div>
               </div>
             </form><h2 class="form-part-title underline">
@@ -57,70 +60,25 @@
             </h2>
             <form class="form">
               <div class="form-row">
-                <label class="form-label">是否具名</label>
-                <div class="form-content">
-                  具名捐款
-                </div>
-              </div>
-              <div class="form-row">
                 <label class="form-label">捐款方式</label>
                 <div class="form-content">
-                  信用卡捐款
+                  匿名捐款
                 </div>
               </div>
               <div class="form-row">
-                <label class="form-label">捐款人姓名（公司名稱）</label>
+                <label class="form-label">我來自</label>
                 <div class="form-content">
-                  <input class="form-control" type="text">
+                  <select class="form-select"><option value="item">不透露</option><option value="item">台北市</option><option value="item">新北市</option><option value="item">桃園市</option><option value="item">台中市</option><option value="item">台南市</option><option value="item">高雄市</option><option value="item">基隆市</option><option value="item">新竹市</option><option value="item">嘉義市</option><option value="item">新竹縣</option><option value="item">苗栗縣</option><option value="item">彰化縣</option><option value="item">南投縣</option><option value="item">雲林縣</option><option value="item">嘉義縣</option><option value="item">屏東縣</option><option value="item">宜蘭縣</option><option value="item">花蓮縣</option><option value="item">台東縣</option><option value="item">澎湖縣</option><option value="item">金門縣</option><option value="item">連江縣</option></select>
                 </div>
               </div>
               <div class="form-row">
-                <label class="form-label">身分證字號（統一編號）</label>
-                <div class="form-content">
-                  <input class="form-control small" type="text">
-                </div>
-              </div>
-              <div class="form-row">
-                <label class="form-label">聯絡電話（行動電話）</label>
-                <div class="form-content">
-                  <input class="form-control small" type="tel">
-                </div>
-              </div>
-              <div class="form-row">
-                <label class="form-label">Email</label>
+                <label class="form-label"> Email</label>
                 <div class="form-content">
                   <input class="form-control large" type="email">
-                </div>
-              </div>
-              <div class="form-row">
-                <label class="form-label">戶籍地址</label>
-                <div class="form-content">
-                  <select class="form-select"><option value="item">縣市</option></select><select class="form-select"><option value="item">鄉鎮市區</option></select><input class="form-control large" type="text">
-                </div>
-              </div>
-              <div class="form-row">
-                <label class="form-label">通訊地址</label>
-                <div class="form-content">
-                  <select class="form-select"><option value="item">縣市</option></select><select class="form-select"><option value="item">鄉鎮市區</option></select><input class="form-control large" type="text">
-                  <div class="group-checkbox">
-                    <label><input name="interest" type="checkbox">同戶籍地址</input></label>
-                  </div>
-                </div>
-              </div>
-              <div class="form-row">
-                <label class="form-label">是否寄送收據</label>
-                <div class="form-content">
-                  <div class="group-radio">
-                    <label><input name="receipt" type="radio">要</input></label><label><input name="receipt" type="radio">不要</input></label>
-                  </div>
-                </div>
-              </div>
-              <div class="form-row">
-                <label class="form-label">收據寄送地址</label>
-                <div class="form-content">
-                  <select class="form-select"><option value="item">縣市</option></select><select class="form-select"><option value="item">鄉鎮市區</option></select><input class="form-control large" type="text">
-                  <div class="group-radio">
-                    <label><input name="address-sync" type="radio">同戶籍地址</input></label><label><input name="address-sync" type="radio">同通訊地址</input></label>
+                  <div class="form-tip">
+                    <p>
+                      建議您提供Email信箱,方便寄送捐款通知,以便後續確認及查詢
+                    </p>
                   </div>
                 </div>
               </div>
@@ -171,7 +129,7 @@
               <div class="form-row">
                 <label class="form-label"></label>
                 <div class="form-content">
-                  <a href="/form/donate-form-step2.html"><input class="btn btn_primary" type="button" value="下一步"></a><input class="btn" type="submit" value="重填">
+                  <a href="/form/donate-form-step2.html"><input class="btn large btn_primary" type="button" value="下一步"></a><input class="btn large" type="submit" value="重填">
                 </div>
               </div>
             </form>
