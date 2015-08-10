@@ -3,10 +3,22 @@
   &:before, &:after
     display: none
 
+.end-sticker
+  position: absolute
+  bottom: 12px
+  right: 12px
+  +replace-text-with-svg('sticker')
+
+  +at-breakpoint($desktop)
+    top: 48px
+    right: 48px
+
+
 .donate-index
   +pie-clearfix
 
   .donate-entrance, .smartcards-entrance
+    position: relative
     display: block
 
     &:hover
@@ -87,7 +99,7 @@
       width: 50%
 
     .donate-content, .smartcards-content
-      max-width: ( 1520 / 2 )+px
+      max-width: ( 1920 / 2 )+px
       height: 100vh
       padding: 56px
 

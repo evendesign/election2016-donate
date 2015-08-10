@@ -537,8 +537,11 @@ form { margin-bottom: 48px; }
 .page-inner.index { padding-bottom: 0; }
 .page-inner.index:before, .page-inner.index:after { display: none; }
 
+.end-sticker { position: absolute; bottom: 12px; right: 12px; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/sticker.png?1439202147'); background-repeat: no-repeat; background-position: 50% 50%; width: 140px; height: 138px; background-image: none, url('/images/sticker.svg?1439202147'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+@media (min-width: 71em) { .end-sticker { top: 48px; right: 48px; } }
+
 .donate-index:after { content: ""; display: table; clear: both; }
-.donate-index .donate-entrance, .donate-index .smartcards-entrance { display: block; }
+.donate-index .donate-entrance, .donate-index .smartcards-entrance { position: relative; display: block; }
 .donate-index .donate-entrance:hover, .donate-index .smartcards-entrance:hover { text-decoration: none; }
 .donate-index .title { margin-bottom: 12px; color: #212121; font-size: 26px; line-height: 36px; }
 .donate-index .entrance { display: inline-block; padding: 3px 12px; font-size: 18px; line-height: 30px; color: white; text-align: center; font-weight: bold; background-color: #50b584; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
@@ -556,7 +559,7 @@ form { margin-bottom: 48px; }
 @media (min-width: 1023px) { .donate-index .title { font-size: 34px; line-height: 42px; }
   .donate-index .donate-entrance { float: left; width: 50%; }
   .donate-index .smartcards-entrance { float: right; width: 50%; }
-  .donate-index .donate-content, .donate-index .smartcards-content { max-width: 760px; height: 100vh; padding: 56px; }
+  .donate-index .donate-content, .donate-index .smartcards-content { max-width: 960px; height: 100vh; padding: 56px; }
   .donate-index .donate-content { margin: 0 0 0 auto; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
   .donate-index .smartcards-content { margin: 0 auto 0 0; } }
 @media screen and (device-aspect-ratio: 40 / 71) { .donate-index .donate-content, .donate-index .smartcards-content { min-height: 284px; } }
