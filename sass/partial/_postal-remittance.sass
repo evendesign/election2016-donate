@@ -31,10 +31,22 @@
 
   @include at-breakpoint(64em)
     .content
+      position: relative
       max-width: none
       padding-left: 0
 
+      &:after
+        content: ""
+        position: absolute
+        top: 50%
+        width: 50%
+        height: 4px
+        margin-top: -2px
+        background-color: $color-black-a10
+
     .title
+      position: relative
+      z-index: 10
       display: inline-block
       +trailer(0)
       padding-left: 128px
@@ -42,18 +54,9 @@
       +adjust-font-size-to(30px, 2.5)
       background-color: white
 
-      &:after
-        content: ""
-        position: absolute
-        z-index: -1
-        top: 50%
-        width: 50%
-        height: 4px
-        margin-top: -2px
-        background-color: $color-black-a10
-
     .postal-info
       position: absolute
+      z-index: 10
       top: 0
       right: 60px
       width: 55%
