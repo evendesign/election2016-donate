@@ -10,6 +10,9 @@
   right: 12px
   +replace-text-with-svg('sticker')
 
+  &.wave-two
+    +replace-text-with-svg('sticker-w2')
+
   +at-breakpoint($pad)
     top: 48px
     right: 48px
@@ -169,13 +172,13 @@
       float: right
       width: 50%
 
-    .donate-content, .smartcards-content
+    .donate-content, .daebyday-content
       max-width: ( 1920 / 2 )+px
       height: 50vh
       margin: 0 auto 0 0
       padding: 56px
 
-    .daebyday-content
+    .donate-content
       height: 100vh
       padding: 56px
 
