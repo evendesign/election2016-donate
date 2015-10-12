@@ -1,0 +1,176 @@
+.page-inner.index
+  padding-bottom: 0
+  &:before, &:after
+    display: none
+
+.equality-index
+  +pie-clearfix
+
+  .equality-entrance
+    position: relative
+    display: block
+    pointer-events: none
+
+    &.active
+      pointer-events: visible
+
+    &:hover
+      text-decoration: none
+
+  .title
+    +leader(.25)
+    +trailer(.5)
+    color: $color-black
+    +adjust-font-size-to(26px, 1.5)
+
+  .entrance
+    display: none
+    padding: 3px 12px
+    +adjust-font-size-to(18px, 1.25)
+    color: white
+    text-align: center
+    font-weight: bold
+    background-color: #50B584
+    +border-radius(5px)
+
+    &.active
+      display: inline-block
+
+  .entrance-note
+    +adjust-font-size-to(12px)
+    color: $color-black
+
+    &.bold
+      font-weight: bold
+      @extend %subpixel
+
+  .equality-content
+    +box-sizing(border-box)
+    min-height: 100vh
+    padding: 24px
+
+    .entrance-note
+      color: $color-black
+      font-weight: bold
+
+  .equality-entrance
+    +background(url('/images/index-donate-background.svg'), radial-gradient(#fff 0%, #F3F6F3 55%))
+    background-position: right bottom
+    background-repeat: no-repeat
+    +background-size(contain)
+
+    .title
+      +replace-text-with-svg('index-equality-title')
+
+  .equality-countdown
+    position: absolute
+    bottom: 24px
+    left: 0
+    right: 0
+    padding: 0 24px
+    color: $color-black
+    background-color: transparent
+
+    .countdown-title
+      +leader(.5)
+      +adjust-font-size-to(15px)
+      font-weight: bold
+
+    .countdown-timer
+      font-size: 48px
+      line-height: 56px
+      font-family: "DINWebPro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+      font-weight: 300
+      letter-spacing: -1px
+
+      .number
+        display: inline-block
+        margin-right: 9px
+
+      .timer-unit
+        display: inline-block
+        margin-right: 9px
+        +adjust-font-size-to(16px)
+        font-weight: bold
+
+      .finish
+        font-size: 36px
+        line-height: 56px
+        font-weight: bold
+        color: $color-black
+
+  +at-breakpoint($pad)
+
+    .title
+      +adjust-font-size-to(30px, 1.5)
+
+    .equality-entrance
+      // +background-size(cover)
+
+    .equality-content
+      padding: 48px 48px 284px
+
+    .equality-countdown
+      bottom: 48px
+      left: 48px
+      right: auto
+      padding: 0
+      +border-radius(5px)
+
+      .countdown-title
+        +trailer(.5)
+        +adjust-font-size-to(16px)
+
+      .countdown-timer
+        font-size: 56px
+        line-height: 72px
+
+        .timer-unit
+          +adjust-font-size-to(18px)
+
+        .finish
+          font-size: 48px
+          line-height: 72px
+
+
+  +at-breakpoint(1023px 12)
+
+    .title
+      +adjust-font-size-to(34px, 1.75)
+
+    .equality-content
+      height: 100vh
+      padding: 56px
+
+    .equality-countdown
+      bottom: 56px
+      left: 56px
+
+      .countdown-title
+        +trailer()
+        +adjust-font-size-to(18px)
+
+      .countdown-timer
+        font-size: 72px
+        line-height: 72px
+
+        .timer-unit
+          +adjust-font-size-to(24px)
+
+        .finish
+          font-size: 64px
+          line-height: 72px
+
+  // for iOS 7 mediaquery
+  @media screen and (device-aspect-ratio: 40/71)
+    .equality-content
+      min-height: 460px
+
+  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)
+    .equality-content
+      min-height: 384px
+
+  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)
+    .equality-content
+      min-height: 512px
+
