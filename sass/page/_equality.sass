@@ -1,3 +1,16 @@
+@-webkit-keyframes equality-rotate
+  from
+    +rotate(0deg)
+  to
+    +rotate(359deg)
+
+@keyframes equality-rotate
+  from
+    +rotate(0deg)
+  to
+    +rotate(359deg)
+
+
 .page-inner.index
   padding-bottom: 0
   &:before, &:after
@@ -5,6 +18,20 @@
 
 .equality-index
   +pie-clearfix
+  position: relative
+  background-color: #00333E
+
+  .equality-logo
+    position: absolute
+    right: -7%
+    bottom: -7%
+    width: 100%
+    height: auto
+    max-width: 900px
+    max-height: 900px
+    -webkit-animation: equality-rotate 90s infinite linear
+    animation: equality-rotate 90s infinite linear
+
 
   .equality-entrance
     position: relative
@@ -20,7 +47,7 @@
   .title
     +leader(.25)
     +trailer(.5)
-    color: $color-black
+    color: white
     +adjust-font-size-to(26px, 1.5)
 
   .entrance
@@ -38,7 +65,7 @@
 
   .entrance-note
     +adjust-font-size-to(12px)
-    color: $color-black
+    color: white
 
     &.bold
       font-weight: bold
@@ -50,25 +77,26 @@
     padding: 24px
 
     .entrance-note
-      color: $color-black
+      color: white
       font-weight: bold
 
   .equality-entrance
-    +background(url('/images/index-donate-background.svg'), radial-gradient(#fff 0%, #F3F6F3 55%))
-    background-position: right bottom
-    background-repeat: no-repeat
-    +background-size(contain)
+    // +background(url('/images/index-donate-background.svg'), radial-gradient(#fff 0%, #F3F6F3 55%))
+    // background-position: right bottom
+    // background-repeat: no-repeat
+    // +background-size(contain)
 
     .title
       +replace-text-with-svg('index-equality-title')
 
   .equality-countdown
     position: absolute
+    z-index: 100
     bottom: 24px
     left: 0
     right: 0
     padding: 0 24px
-    color: $color-black
+    color: white
     background-color: transparent
 
     .countdown-title
@@ -97,7 +125,7 @@
         font-size: 36px
         line-height: 56px
         font-weight: bold
-        color: $color-black
+        color: white
 
   +at-breakpoint($pad)
 
