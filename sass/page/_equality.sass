@@ -38,6 +38,7 @@
     position: relative
     display: block
     pointer-events: none
+    z-index: 100
 
     &.active
       pointer-events: visible
@@ -194,12 +195,3 @@
   @media screen and (device-aspect-ratio: 40/71)
     .equality-content
       min-height: 460px
-
-  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)
-    .equality-content
-      min-height: 384px
-
-  @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)
-    .equality-content
-      min-height: 512px
-
