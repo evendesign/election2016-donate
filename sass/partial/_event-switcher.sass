@@ -2,17 +2,17 @@
   +pie-clearfix
   background-color: #F3F6F3
 
-  .donate-entrance, .smartcards-entrance, .daebyday-entrance
+  .donate-index-page, .tablemat-entrance
     +box-sizing(border-box)
     display: block
-    width: 33.333%
+    width: 50%
     padding: 12px 3px
     text-align: center
 
     &:hover
       text-decoration: none
 
-  .daebyday-entrance
+  .index-link
     float: left
     color: white
     background-color: #829235
@@ -21,26 +21,26 @@
     &:hover
       background-color: lighten(#829235, 3%)
 
-  .donate-entrance
+  .donate-index-page
     float: left
     color: #00343E
-    background-color: #F3F6F3
+    background-color: #C5DD50
     +transition(background-color .5s)
 
     &:hover
       background-color: lighten(#F3F6F3, 3%)
 
-  .smartcards-entrance
+  .tablemat-entrance
     float: right
     color: white
-    background-color: #00343E
+    background-color: #58483C
     +transition(background-color .5s)
 
     &:hover
       background-color: lighten(#00343E, 3%)
 
   .title
-    +adjust-font-size-to(11px, 0.75)
+    +adjust-font-size-to(13px, 0.75)
 
     .bold
       font-weight: bold
