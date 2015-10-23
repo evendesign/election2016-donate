@@ -12,15 +12,6 @@
     &:hover
       text-decoration: none
 
-  .index-link
-    float: left
-    color: white
-    background-color: #829235
-    +transition(background-color .5s)
-
-    &:hover
-      background-color: lighten(#829235, 3%)
-
   .donate-index-page
     float: left
     color: #00343E
@@ -28,7 +19,7 @@
     +transition(background-color .5s)
 
     &:hover
-      background-color: lighten(#F3F6F3, 3%)
+      background-color: lighten(#C5DD50, 3%)
 
   .tablemat-entrance
     float: right
@@ -37,7 +28,7 @@
     +transition(background-color .5s)
 
     &:hover
-      background-color: lighten(#00343E, 3%)
+      background-color: lighten(#58483C, 3%)
 
   .title
     +adjust-font-size-to(13px, 0.75)
@@ -50,7 +41,7 @@
       display: block
 
   +at-breakpoint($pad)
-    .donate-entrance, .smartcards-entrance, .daebyday-entrance
+    .donate-index-page, .tablemat-entrance
       padding: 18px
     .title
       +adjust-font-size-to(16px)
